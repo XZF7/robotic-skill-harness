@@ -9,6 +9,7 @@ from .errors import (
     SkillNotFoundError,
 )
 from .executor import SkillExecutor
+from .harness import TaskRunner, TaskRunResult
 from .logger import ExecutionLogger
 from .registry import SkillRegistry
 from .state_machine import (
@@ -20,6 +21,8 @@ from .state_machine import (
 __all__ = [
     "SkillRegistry",
     "SkillExecutor",
+    "TaskRunner",
+    "TaskRunResult",
     "TaskState",
     "TaskStateMachine",
     "skill_status_to_task_state",
