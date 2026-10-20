@@ -2,73 +2,43 @@
 
 > 维护规则：每个里程碑记录实际执行命令、验证结果、限制、集成依赖。未验证前不得标记完成。
 
-## Milestone 0 — 环境与仓库 ✅ 已验证（2026-10-20）
+## Milestone 0 — 环境与仓库 ✅（已验证）
 
-### 环境勘察（已验证）
+- OS: Ubuntu 20.04.6 LTS（lthpc）；4× H800 80GB（被其他任务占用）；nvcc 12.1.105。
+- 环境 `/data02/xzf/envs/maniskill`（Python 3.10.22）：torch 2.5.1+cu124、mani_skill 3.0.1、sapien 3.0.3、mplib 0.1.1、pytest。
+- 官方示例 PickCube-v1（CPU headless）跑通，日志 `logs/m0_pickcube_cpu.log`。
+- 详见 git 历史 `de2db2b`。
 
-| 项 | 值 |
-|---|---|
-| OS | Ubuntu 20.04.6 LTS（`lthpc`，x86_64，内核 5.15.0-131） |
-| GPU | 4× NVIDIA H800 80GB，驱动 575.57.08 / CUDA 12.9 |
-| nvcc | 12.1.105（toolkit：11 / 11.7 / 12 / 12.1 / 12.4） |
-| 内存 | 1 TB（可用 ~928 GB） |
-| 磁盘 | `/` 剩 247G(85%)；`/data02` 剩 326G(96%) |
-| conda | 24.9.2 |
+## Milestone 1 — 操作基线 + 运行时 + 评估框架 ✅（已验证并集成）
 
-### 网络（已验证）
+### 共享契约冻结
 
-- PyPI 可达（pypi.org / 清华 / 阿里云）。
-- **HuggingFace 不可达**（SSL 错误）。M0 无影响；M4 拉 RL 数据集需注意。
-- **代理限速**：走 `127.0.0.1:7890` 时清华镜像仅 ~9.75 MB/s，直连 ~53 MB/s。→ 安装依赖一律 `unset HTTP_PROXY/HTTPS_PROXY` 后直连。
+`interfaces/` 6 契约 + 12 契约测试（tag `v0.1.0-interfaces`）。三分支均未改动契约（已核验 git diff 为空）。
 
-### 仓库（已建）
+### 三 Agent 并行成果（各自 worktree/分支，已合并 master）
 
-`/data02/xzf/robotic-skill-harness/`，git 已初始化。
-```
-├── README.md  .gitignore
-├── docs/    PROJECT_SPEC.md · ARCHITECTURE.md · INTERFACES.md · PROJECT_STATUS.md
-├── interfaces/   （共享契约 Python 定义，M1 冻结实现）
-├── scripts/  activate_env.sh（环境激活 + nvjitlink 修复）
-└── logs/     m0_pickcube_cpu.log（M0 验证日志）
-```
+| Agent | 目录 | 内容 | 测试 |
+|---|---|---|---|
+| A 仿真 | `sim/` | PickCubeAdapter(SimulatorAdapter) + PickCubeSkill(mplib 运动规划) | 10 |
+| B 运行时 | `runtime/` | SkillRegistry / SkillExecutor / TaskStateMachine / ExecutionLogger | 20 |
+| D 评估 | `eval/` | 序列化 / 指标 / 基准配置 / 基线对比 / mock 守卫 | 56 |
 
-### 依赖环境（已装，/data02/xzf/envs/maniskill）
+### 集成验证（Lead 独立复测，非自报）
 
-| 包 | 版本 |
-|---|---|
-| Python | 3.10.22 |
-| torch | 2.5.1+cu124（CUDA 可用，已验证） |
-| mani_skill | 3.0.1 |
-| sapien | 3.0.3 |
-| numpy | 2.2.6 |
-| gymnasium | 1.4.0 |
+- 全量测试：`python -m pytest tests/ runtime/ eval/ -q` → **98 passed, 0 failed**（12 契约 + 10 sim + 20 runtime + 56 eval）。
+- PickCube 基线独立重跑：`python -m sim.run_episodes -n 5 --seeds 0 1 2 3 4` → **5/5 成功（100%），平均 68.4 步**，逐 seed 71/71/47/81/72。日志 `logs/m1_pickcube_baseline.log`。
+- 测试数更正：Agent A 自报"22 单测"实际含 12 个契约测试，其新增 adapter 测试为 10 个。
 
-### 关键坑与修复（务必遵守）
+### 环境修复（Agent A 发现，已生效）
 
-1. **nvjitlink 遮蔽**：系统 `LD_LIBRARY_PATH` 含 `/usr/local/cuda-12.1/lib64`，其 `libnvJitLink.so.12`(12.1.105) 遮蔽 torch 自带 12.4.127 版，导致 `libcusparse` 报 `undefined symbol __nvJitLinkComplete_12_4`。
-   修复：运行前 `source scripts/activate_env.sh`（前置 pip 自带 nvjitlink 目录）。
-2. **代理限速**：安装依赖前先 `unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy`，用 `-i https://pypi.tuna.tsinghua.edu.cn/simple`。
-3. **GPU 占用**：4 张 H800 均被其他任务占用（util 51–99%）。M0 用 CPU 仿真；M4 训练前需确认 GPU 空余。
+1. **numpy 2.2.6 → 1.26.4**：numpy2 使 mplib `ArticulatedModel` 空指针段错误。已降级，mani_skill/mplib/torch 均正常。
+2. **CUDA_VISIBLE_DEVICES 不能设空串**：空串使 SAPIEN `build_cube` 段错误。规避：设为单一有效卡号（如 `2`），但仿真/渲染仍走 CPU（`-b cpu`，`render_backend=none`），不占 GPU 计算。
 
-### 官方示例验证（已验证 ✅）
+### M2 集成点（待办，不阻塞 M1）
 
-命令：
-```bash
-source scripts/activate_env.sh
-python -m mani_skill.examples.demo_random_action -e "PickCube-v1" -b cpu -rb none --render-mode none -n 1 -s 0
-```
-
-结果（`logs/m0_pickcube_cpu.log`，exit=0）：
-- PickCube-v1（Franka Panda）加载成功
-- Action space `Box(-1,1,(8,),float32)`、控制模式 `pd_joint_delta_pos`（7 关节 + 抓手）
-- 50 步 episode 完整运行（truncated=True），每步返回 reward/terminated/info（含 `is_grasped`/`is_obj_placed`）
-- 随机动作 success=False（符合预期——官方安装自检示例）
-
-### 约束与决策
-
-- 项目数据全部置于 `/data02/xzf/`（用户指定）。
-- M0 完成前未启动 M1、未派任何并行编码代理（符合 spec §9）。
+- `PickCubeSkill` 扩展了接口外的 `finalize()/status/result()`；`SkillExecutor` 目前靠 `is_done` + `truth.success` 判定。二者联调（A 真实技能 + B executor）时需统一 SkillResult 的单一来源。
+- Agent C 尚未启动（符合约束 §4）。
 
 ## 后续里程碑
 
-M1 操作基线 → M2 运行时 → M3 失败检测与恢复 → M4 学习扩展 → M5 自动基准 → M6 文档。详见 `PROJECT_SPEC.md` §5。
+M2 可靠运行时（A+B 联调、失败恢复）→ M3 失败检测与恢复 → M4 学习扩展（启动 Agent C）→ M5 自动基准 → M6 文档。

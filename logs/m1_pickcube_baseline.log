@@ -1,0 +1,135 @@
+sh: /data02/xzf/envs/maniskill/lib/libtinfo.so.6: no version information available (required by sh)
+sh: /data02/xzf/envs/maniskill/lib/libtinfo.so.6: no version information available (required by sh)
+[33;1m2026-10-20 18:00:58,791 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+[seed=  0] success=True  steps=71  status=success
+[seed=  1] success=True  steps=71  status=success
+[seed=  2] success=True  steps=47  status=success
+[seed=  3] success=True  steps=81  status=success
+[seed=  4] success=True  steps=72  status=success
+
+=== 结果 ===
+成功 5/5  episode，成功率 100.00%
+平均步数 68.4
+{
+  "num_episodes": 5,
+  "success_count": 5,
+  "success_rate": 1.0,
+  "mean_steps": 68.4,
+  "per_episode": [
+    {
+      "task_id": "PickCube-v1",
+      "success": true,
+      "steps": 71,
+      "reward": 21.574811927974224,
+      "skill_results": [
+        {
+          "status": "success",
+          "skill_id": "pick_cube_mplib",
+          "steps": 71,
+          "message": "",
+          "failure": null
+        }
+      ],
+      "failures": [],
+      "metrics": {
+        "seed": 0,
+        "terminated": true,
+        "skill_status": "success",
+        "is_grasped": true
+      },
+      "source": "sim"
+    },
+    {
+      "task_id": "PickCube-v1",
+      "success": true,
+      "steps": 71,
+      "reward": 20.136139888316393,
+      "skill_results": [
+        {
+          "status": "success",
+          "skill_id": "pick_cube_mplib",
+          "steps": 71,
+          "message": "",
+          "failure": null
+        }
+      ],
+      "failures": [],
+      "metrics": {
+        "seed": 1,
+        "terminated": true,
+        "skill_status": "success",
+        "is_grasped": true
+      },
+      "source": "sim"
+    },
+    {
+      "task_id": "PickCube-v1",
+      "success": true,
+      "steps": 47,
+      "reward": 11.386214911937714,
+      "skill_results": [
+        {
+          "status": "success",
+          "skill_id": "pick_cube_mplib",
+          "steps": 47,
+          "message": "",
+          "failure": null
+        }
+      ],
+      "failures": [],
+      "metrics": {
+        "seed": 2,
+        "terminated": true,
+        "skill_status": "success",
+        "is_grasped": true
+      },
+      "source": "sim"
+    },
+    {
+      "task_id": "PickCube-v1",
+      "success": true,
+      "steps": 81,
+      "reward": 22.93460763245821,
+      "skill_results": [
+        {
+          "status": "success",
+          "skill_id": "pick_cube_mplib",
+          "steps": 81,
+          "message": "",
+          "failure": null
+        }
+      ],
+      "failures": [],
+      "metrics": {
+        "seed": 3,
+        "terminated": true,
+        "skill_status": "success",
+        "is_grasped": true
+      },
+      "source": "sim"
+    },
+    {
+      "task_id": "PickCube-v1",
+      "success": true,
+      "steps": 72,
+      "reward": 22.5252925157547,
+      "skill_results": [
+        {
+          "status": "success",
+          "skill_id": "pick_cube_mplib",
+          "steps": 72,
+          "message": "",
+          "failure": null
+        }
+      ],
+      "failures": [],
+      "metrics": {
+        "seed": 4,
+        "terminated": true,
+        "skill_status": "success",
+        "is_grasped": true
+      },
+      "source": "sim"
+    }
+  ]
+}
