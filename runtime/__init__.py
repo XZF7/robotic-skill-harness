@@ -9,7 +9,17 @@ from .errors import (
     SkillNotFoundError,
 )
 from .executor import SkillExecutor
+from .failure_detector import FailureDetector, FailureDetectorConfig
 from .harness import TaskRunner, TaskRunResult
+from .recovery import (
+    RecordingAdapter,
+    RecoveryManager,
+    RecoveryManagerConfig,
+    RecoveryRunResult,
+    RecoveryRunner,
+    RecoveryState,
+    RecoveryStateMachine,
+)
 from .logger import ExecutionLogger
 from .registry import SkillRegistry
 from .state_machine import (
@@ -23,6 +33,15 @@ __all__ = [
     "SkillExecutor",
     "TaskRunner",
     "TaskRunResult",
+    "FailureDetector",
+    "FailureDetectorConfig",
+    "RecoveryManager",
+    "RecoveryManagerConfig",
+    "RecoveryRunner",
+    "RecoveryRunResult",
+    "RecoveryState",
+    "RecoveryStateMachine",
+    "RecordingAdapter",
     "TaskState",
     "TaskStateMachine",
     "skill_status_to_task_state",
