@@ -34,6 +34,20 @@ from .fault_injection import (
     failure_manifested, is_valid_injected_failure, failure_detected, recovery_attempted,
     DEFINITIONS, RecoveryMetrics, compute_recovery_metrics, split_by_privileged,
 )
+from .learning_split import LearningSplit, split_episodes, verify_split
+from .learning_metrics import (
+    DEFINITIONS as LEARNING_METRIC_DEFINITIONS,
+    average_precision,
+    PredictionMetrics,
+    compute_prediction_metrics,
+)
+from .learning_baselines import (
+    MajorityClassPredictor,
+    RuleBasedPredictor,
+    LearnedPredictor,
+    build_default_baselines,
+    evaluate_baselines,
+)
 from .recovery_benchmark import (
     match_key, RecoveryBenchmarkConfig, RecoveryComparison,
     compare_b0_b1, label_condition,
@@ -63,4 +77,9 @@ __all__ = [
     "DEFINITIONS", "RecoveryMetrics", "compute_recovery_metrics", "split_by_privileged",
     "match_key", "RecoveryBenchmarkConfig", "RecoveryComparison",
     "compare_b0_b1", "label_condition",
+    "LearningSplit", "split_episodes", "verify_split",
+    "LEARNING_METRIC_DEFINITIONS", "average_precision", "PredictionMetrics",
+    "compute_prediction_metrics",
+    "MajorityClassPredictor", "RuleBasedPredictor", "LearnedPredictor",
+    "build_default_baselines", "evaluate_baselines",
 ]
