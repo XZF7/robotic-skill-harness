@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# conda / venv
+.venv/
+env/
+
+# data & checkpoints
+data/
+checkpoints/
+runs/
+logs/
+*.ckpt
+*.pth
+*.pt
+
+# ManiSkill outputs
+videos/
+trajectory/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
