@@ -113,3 +113,51 @@ M2 可靠运行时（A+B 联调、失败恢复）→ M3 失败检测与恢复 �
 - gripper_drop 需条件触发（is_grasped ∧ cube_airborne），harness 固定步调度未接入，仅在 A 的独立测试验证。
 - `EpisodeResult.failures` 只含最终结果的 failure，中间尝试的失败类别在 RecoveryResult.decisions 里（评估的 failure_category_counts 不含中间失败）。
 - FailureDetector 阈值（collision_qvel_threshold 等）尚未用真实动力学标定。
+
+
+## Milestone 4 — 可学习失败预测与预判恢复 ✅（已验证，含诚实负面结果）
+
+### M4-0 学习契约（Lead，`v0.4.0-contracts`）
+
+`interfaces/learning.py`：22 维 proprioception 特征（qpos/qvel/gripper/tcp_pose，仅 `obs.policy`，严禁 `obs.truth`）、失败标注 horizon H=20（失败 episode 最后 H 步帧标 1）、数据集按 episode+seed 分组防泄漏、`FailurePredictor/FailurePrediction` 接口。13 测试（含 3 泄漏防护）。
+
+### M4-A 数据采集（Agent A）
+
+`sim/collect_dataset.py` 可复现采集管线（B0 式故障注入、无恢复）。150 episode 平衡数据集（76 成功/74 失败，11423 帧），4 场景（normal 60 / object_displacement 30 / grasp_perturb 30 / object_impulse 30），注入核实 90/90。剔除退化种子（cube 生成在 goal 处=1 步平凡成功、mplib 规划失败=0 步）。确定性复现 bit 级一致。
+
+### M4-D 评估协议（Agent D）
+
+`eval/learning_split.py`（episode 级 train/val/test 切分、seed 原子性、held-out 扰动配置）、`eval/learning_metrics.py`（precision/recall/F1/PR-AUC/FP/FN/latency/lead time，手写平均精度，分母显式）、`eval/learning_baselines.py`（majority/规则/学习三基线统一 FailurePredictor）。38 测试。
+
+### M4-C 模型训练（Agent C）
+
+`learning/` 包：MLP(22→32→1，769 参数，加权 BCE pos_weight=8.61，归一化仅 train 集)。held-out object_impulse（47 episode）上帧级 PR-AUC=0.877 > 规则基线 0.618 > majority 0.214；threshold=0.5 时 F1=0.772/P=0.664/FP=0.122 优于规则（F1=0.707/P=0.549/FP=0.213）。checkpoint 存 `data/m4/checkpoints/`（gitignored）。
+
+### M4-B 运行时集成（Agent B）
+
+`runtime/predictive.py` PredictiveGuard（逐步预测，prob≥阈值且 confidence≥min_confidence 触发提前中止）+ RecoveryMode（b1=纯规则 / b2=规则+学习预判）。预判触发复用现有 SkillStatus.FAILURE+FailureType.UNKNOWN+detail.predictive，走同一 RecoveryManager.decide（max_retries 强制），只影响「是否提前重试」，不发底层指令、不绕过安全。推理异常/无效输入/低置信度回退规则。16 测试（含真实 checkpoint 集成）。
+
+### M4 端到端验证（Lead，`scripts/verify_m4.py`）
+
+B0/B1/B2 matched 对比（3 故障 × 10 种子，threshold=0.5）：
+
+| 指标 | B0 | B1 | B2 |
+|---|---|---|---|
+| task_success_rate | 0.233 | 0.700 | 0.167 |
+| recovery_success_rate | 0.000 | 0.609 | 0.074 |
+| avg_retry_count | — | 1.391 | 1.926 |
+| mean_episode_length | 66.5 | 50.3 | 25.7 |
+
+**结论（诚实负面结果）**：学习预判恢复（B2）端到端劣于规则恢复（B1），甚至劣于 B0 基线。
+
+- 帧级：学习模型确实优于规则基线（PR-AUC 0.877 vs 0.618），因利用 qvel/tcp 上下文降误报。
+- 端到端：预判触发把帧级假阳（12% FP）放大成 attempt 级中止——预测器在抓取闭合阶段误报（成功/失败前兆观测不可区分），59 次触发几乎每集 2 次，打断 B1 本可成功的重规划 attempt，max_retries=2 耗尽→abort。
+- 阈值敏感性：threshold=0.8 仍劣（task_success 0.400 vs B1 1.000）；threshold=0.95 中性（1.000 = B1，但预测器仅触发 2 次、退化为规则行为）。
+- 根因：PickCube 的抓空失败在抓手闭合「之后」才可观测（物体位姿在 obs.truth 禁区），proprioception 无法提前区分；规则式事后检测+重规划（B1）已近最优。
+
+### 已知限制 / 技术债
+
+- 预判恢复在 proprioception-only 约束下对「事后才可观测」的失败无头启动优势；若要预判价值，需引入视觉/深度等额外观测（超 M4 范围）。
+- 数据 seed 跨 fault_type 复用，需 episode 重映射唯一 seed（已由 C 实现并文档化）。
+- val 集过小（17 episode），阈值调优不可靠，threshold=0.5 为稳健默认。
+- B2 的 num_real_failures(27) > B1(23)：预判中止本身制造失败，佐证其有害。

@@ -147,14 +147,14 @@ def run_b1(seed, ftype, fstep, fparams, fdur):
                          r.recovery, sr, r.episode, executor.episode_reward), 0
 
 
-def run_b2(seed, ftype, fstep, fparams, fdur, predictor):
+def run_b2(seed, ftype, fstep, fparams, fdur, predictor, threshold):
     adapter, injector, fadapter = _mk(seed, ftype, fstep, fparams, fdur)
     skill = PickCubeSkill(fadapter)
     executor = AccumulatingExecutor()
     manager = RecoveryManager(max_retries=2)
     runner = RecoveryRunner(fadapter, skill, task_id="PickCube-v1",
                             executor=executor, manager=manager, recovery_mode="b2",
-                            predictor=predictor, predictor_threshold=PREDICTOR_THRESHOLD)
+                            predictor=predictor, predictor_threshold=threshold)
     try:
         r = runner.run(seed=seed, max_steps=300)
     finally:
@@ -173,12 +173,13 @@ def main():
     ap.add_argument("--faults", nargs="*", default=["object_displacement"])
     ap.add_argument("--seeds", type=int, nargs="*", default=[0, 1, 2, 3, 4])
     ap.add_argument("--out", default=None)
+    ap.add_argument("--threshold", type=float, default=0.5)
     args = ap.parse_args()
     if args.smoke:
         args.faults = ["object_displacement"]
         args.seeds = [0]
 
-    predictor = load_predictor()
+    predictor = load_predictor(threshold=args.threshold)
     b0_eps, b1_eps, b2_eps = [], [], []
     details = []
     for fname in args.faults:
@@ -186,7 +187,7 @@ def main():
         for seed in args.seeds:
             b0, _ = run_b0(seed, ftype, fstep, fparams, fdur)
             b1, _ = run_b1(seed, ftype, fstep, fparams, fdur)
-            b2, b2meta = run_b2(seed, ftype, fstep, fparams, fdur, predictor)
+            b2, b2meta = run_b2(seed, ftype, fstep, fparams, fdur, predictor, args.threshold)
             b0_eps.append(b0); b1_eps.append(b1); b2_eps.append(b2)
             details.append({
                 "fault": fname, "seed": seed,
@@ -212,7 +213,7 @@ def main():
 
     report = {
         "faults": args.faults, "seeds": args.seeds,
-        "predictor_threshold": PREDICTOR_THRESHOLD,
+        "predictor_threshold": args.threshold,
         "details": details,
         "b0": m0.to_dict(), "b1": m1.to_dict(), "b2": m2.to_dict(),
         "false_recovery_trigger_episodes": false_trigger_eps,

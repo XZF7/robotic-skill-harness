@@ -74,7 +74,7 @@ class TestAttachExtract:
     def test_attach_baseline_validates(self):
         ep = EpisodeResult(task_id="t", success=False, steps=1, reward=0.0)
         with pytest.raises(ValueError):
-            attach_baseline(ep, "b2")
+            attach_baseline(ep, "b3")
 
 
 # ---- 谓词 ------------------------------------------------------------------
