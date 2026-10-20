@@ -8,6 +8,17 @@ from .adapter import EpisodeInfo, StepResult, SimulatorAdapter
 from .failure import FailureType, FailureEvent
 from .recovery import RecoveryAction, RecoveryDecision, RecoveryResult
 from .fault import FaultRecord
+from .learning import (
+    STATE_FEATURE_NAMES,
+    STATE_FEATURE_DIM,
+    DEFAULT_PREDICTION_HORIZON,
+    extract_state_features,
+    label_failure,
+    FrameRecord,
+    EpisodeRecord,
+    FailurePrediction,
+    FailurePredictor,
+)
 from .episode import EpisodeResult, EpisodeMetrics
 
 __all__ = [
@@ -17,5 +28,9 @@ __all__ = [
     "FailureType", "FailureEvent",
     "RecoveryAction", "RecoveryDecision", "RecoveryResult",
     "FaultRecord",
+    "STATE_FEATURE_NAMES", "STATE_FEATURE_DIM", "DEFAULT_PREDICTION_HORIZON",
+    "extract_state_features", "label_failure",
+    "FrameRecord", "EpisodeRecord",
+    "FailurePrediction", "FailurePredictor",
     "EpisodeResult", "EpisodeMetrics",
 ]
