@@ -4,6 +4,7 @@ from __future__ import annotations
 from typing import Callable, Optional
 
 from interfaces import (
+    EpisodeInfo,
     FailureEvent,
     FailureType,
     RobotObservation,
@@ -29,6 +30,8 @@ class SkillExecutor:
 
     def __init__(self, default_max_steps: Optional[int] = None) -> None:
         self.default_max_steps = default_max_steps
+        # 最近一次 adapter.step 产生的 EpisodeInfo (供 harness 取最终真值)。
+        self.last_episode: Optional[EpisodeInfo] = None
 
     def execute(
         self,
@@ -44,6 +47,7 @@ class SkillExecutor:
         if budget is not None and budget < 0:
             raise ValueError("max_steps 不能为负")
 
+        self.last_episode = None
         if reset_skill:
             skill.reset(obs)
         current: RobotObservation = obs
@@ -91,6 +95,7 @@ class SkillExecutor:
             if adapter is not None:
                 step_result = adapter.step(action)
                 current = step_result.observation
+                self.last_episode = step_result.episode
                 if step_result.episode.terminated or step_result.episode.truncated:
                     break
 
