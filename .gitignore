@@ -29,3 +29,6 @@ trajectory/
 
 # OS
 .DS_Store
+
+# ManiSkill motion-planning example outputs
+demos/
