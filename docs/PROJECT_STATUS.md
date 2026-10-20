@@ -42,3 +42,33 @@
 ## 后续里程碑
 
 M2 可靠运行时（A+B 联调、失败恢复）→ M3 失败检测与恢复 → M4 学习扩展（启动 Agent C）→ M5 自动基准 → M6 文档。
+
+
+## Milestone 2 — 可靠技能执行运行时 ✅（已验证）
+
+### M2-A 契约收敛（Lead）
+
+- `RobotSkill` 新增抽象方法 `result(final_obs=None)`：技能单一权威结果（幂等，只返回 SUCCESS/FAILURE）。
+- `SkillExecutor` 改为循环结束后调用 `skill.result()`，**不再读 `truth.success`**；TIMEOUT/ABORTED/异常仍由 executor 产生。
+- 契约 docstring 明确区分四概念：技能完成 / 技能成功 / 任务成功 / 终止与截断。
+- 特权真值 `truth` 隔离：仅评估层与脚本化技能可用，视觉策略不得访问。
+- tag `v0.2.0-interfaces`。
+
+### M2-B 真实集成（2 子代理，顺序执行——B 依赖 A 的适配结果）
+
+- Agent A：`PickCubeSkill` 适配 `result(final_obs)`，删除 `finalize()`，保留 mplib 基线（5/5 成功）。
+- Agent B：`runtime/harness.py` TaskRunner 全链路驱动 + `last_episode` 暴露 env 真值 + 7 集成测试。
+- 注意：Agent B 给 `SkillExecutor` 加了 `last_episode`（加性、非破坏，经审查）。
+
+### M2-C 端到端验证（Lead 独立复测）
+
+- 验证脚本 `scripts/verify_m2c.py`（可复现），日志 `logs/m2c_verification.log`。
+- 路径 `Task → SkillExecutor → PickCubeSkill → ManiSkill → SkillResult → Logger` 跑通。
+- 3 固定种子经 harness 全部 success，`skill_status=success ↔ env_success=True` 一致（consistent=True）。
+- 单一权威 SkillResult（`len(skill_results)==1`）；JSON trace 含完整字段。
+- Agent D 消费真实 episode：`source_counts={'sim':3}`，`require_sim` 守卫通过。
+- 全量测试 **108 passed, 0 failed**（契约 13 + sim 10 + runtime 29 + eval 56）。
+
+### 已知小问题（不阻塞，记入后续）
+
+- `TaskRunner.to_episode_result()` 的 `reward` 取最后一步 reward 而非累计和（当前不影响 M2 验收，M3/M5 评估前需修正）。

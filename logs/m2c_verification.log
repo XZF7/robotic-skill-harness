@@ -1,0 +1,16 @@
+sh: /home/shidi/miniconda3/lib/libtinfo.so.6: no version information available (required by sh)
+sh: /home/shidi/miniconda3/lib/libtinfo.so.6: no version information available (required by sh)
+[33;1m2026-10-20 21:53:04,459 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+[33;1m2026-10-20 21:53:08,932 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+[33;1m2026-10-20 21:53:13,517 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+[seed=0] skill_status=success env_success=True task_state=success terminated=True truncated=False steps=71 consistent=True
+  trace: {"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T13:53:08.715221+00:00", "message": "", "seed": 0, "skill_id": "pick_cube_mplib", "status": "success", "steps": 71, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792504388.7152212, "truncated": false}
+[seed=1] skill_status=success env_success=True task_state=success terminated=True truncated=False steps=71 consistent=True
+  trace: {"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T13:53:13.296691+00:00", "message": "", "seed": 1, "skill_id": "pick_cube_mplib", "status": "success", "steps": 71, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792504393.296691, "truncated": false}
+[seed=2] skill_status=success env_success=True task_state=success terminated=True truncated=False steps=47 consistent=True
+  trace: {"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T13:53:17.878470+00:00", "message": "", "seed": 2, "skill_id": "pick_cube_mplib", "status": "success", "steps": 47, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792504397.8784704, "truncated": false}
+
+=== Agent D 消费真实 episode ===
+success_rate=1.000 mean_steps=63.0 num_episodes=3 source_counts={'sim': 3}
+
+M2-C 端到端验证通过: 真实任务经 harness 跑通, 单一权威结果与观测一致, Agent D 可消费。
