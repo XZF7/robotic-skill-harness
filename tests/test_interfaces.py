@@ -41,6 +41,16 @@ class TestObservation:
 
 
 class TestABC:
+    def test_robot_skill_requires_result(self):
+        class IncompleteSkill(RobotSkill):
+            skill_id = "incomplete"
+            def reset(self, obs): pass
+            def act(self, obs): return np.zeros(8)
+            @property
+            def is_done(self): return False
+        with pytest.raises(TypeError):
+            IncompleteSkill()
+
     def test_simulator_adapter_abstract(self):
         with pytest.raises(TypeError):
             SimulatorAdapter()

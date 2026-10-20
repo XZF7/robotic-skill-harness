@@ -1,6 +1,7 @@
 """runtime 单元测试：成功 / 非法转移 / 失败 / 超时，全部基于 mock 仿真接口。
 
 不依赖 sim/ 与 Agent A；自行构造 mock 的 RobotObservation / SkillResult / FailureEvent。
+关键验证: executor 的成败判定来自 skill.result()，而非 truth.success。
 """
 from __future__ import annotations
 
@@ -53,12 +54,14 @@ def make_obs(step=0, timestamp=0.0, success=False, failure_type=None):
 
 
 class CounterSkill(RobotSkill):
-    """act 计数到 done_after 次后 is_done=True。"""
+    """act 计数到 done_after 次后 is_done=True；result() 返回配置好的状态。"""
 
     skill_id = "counter"
 
-    def __init__(self, done_after=3):
+    def __init__(self, done_after=3, status=SkillStatus.SUCCESS, failure_type=None):
         self.done_after = done_after
+        self.status = status
+        self.failure_type = failure_type
         self.count = 0
 
     def reset(self, obs):
@@ -71,6 +74,13 @@ class CounterSkill(RobotSkill):
     @property
     def is_done(self):
         return self.count >= self.done_after
+
+    def result(self, final_obs=None):
+        failure = (
+            FailureEvent(self.failure_type, self.count, 0.0)
+            if self.failure_type is not None else None
+        )
+        return SkillResult(self.status, self.skill_id, self.count, failure=failure)
 
 
 class NeverDoneSkill(RobotSkill):
@@ -86,6 +96,9 @@ class NeverDoneSkill(RobotSkill):
     def is_done(self):
         return False
 
+    def result(self, final_obs=None):
+        return SkillResult(SkillStatus.FAILURE, self.skill_id, 0)
+
 
 class RaisingSkill(RobotSkill):
     skill_id = "raising"
@@ -99,6 +112,9 @@ class RaisingSkill(RobotSkill):
     @property
     def is_done(self):
         return False
+
+    def result(self, final_obs=None):
+        return SkillResult(SkillStatus.FAILURE, self.skill_id, 0)
 
 
 class MockAdapter(SimulatorAdapter):
@@ -179,7 +195,7 @@ class TestRegistry:
 class TestExecutor:
     def test_success(self):
         ex = SkillExecutor()
-        skill = CounterSkill(done_after=3)
+        skill = CounterSkill(done_after=3, status=SkillStatus.SUCCESS)
         adapter = MockAdapter(success_from_step=3)
         result = ex.execute(skill, adapter.reset(), max_steps=10, adapter=adapter)
         assert result.status is SkillStatus.SUCCESS
@@ -187,14 +203,34 @@ class TestExecutor:
         assert result.steps == 3
         assert result.failure is None
 
+    def test_success_not_from_truth(self):
+        """truth 全程 False，但技能自报 SUCCESS -> 结果仍 SUCCESS (executor 不看 truth)。"""
+        ex = SkillExecutor()
+        skill = CounterSkill(done_after=3, status=SkillStatus.SUCCESS)
+        adapter = MockAdapter(success_from_step=None)  # truth 恒 False
+        result = ex.execute(skill, adapter.reset(), max_steps=10, adapter=adapter)
+        assert result.status is SkillStatus.SUCCESS
+        assert result.steps == 3
+
     def test_failure(self):
         ex = SkillExecutor()
-        skill = CounterSkill(done_after=2)
-        adapter = MockAdapter(success_from_step=None, failure_type="grip_fail")
+        skill = CounterSkill(done_after=3, status=SkillStatus.FAILURE,
+                             failure_type=FailureType.GRIP_FAIL)
+        adapter = MockAdapter(success_from_step=None)
         result = ex.execute(skill, adapter.reset(), max_steps=10, adapter=adapter)
         assert result.status is SkillStatus.FAILURE
-        assert result.steps == 2
+        assert result.steps == 3
         assert result.failure is not None
+        assert result.failure.type is FailureType.GRIP_FAIL
+
+    def test_failure_not_from_truth(self):
+        """truth 从第 1 步起 True，但技能自报 FAILURE -> 结果仍 FAILURE。"""
+        ex = SkillExecutor()
+        skill = CounterSkill(done_after=3, status=SkillStatus.FAILURE,
+                             failure_type=FailureType.GRIP_FAIL)
+        adapter = MockAdapter(success_from_step=1)  # truth 从第 1 步 True，env 提前终止
+        result = ex.execute(skill, adapter.reset(), max_steps=10, adapter=adapter)
+        assert result.status is SkillStatus.FAILURE
         assert result.failure.type is FailureType.GRIP_FAIL
 
     def test_timeout(self):
@@ -313,7 +349,7 @@ class TestLogger:
 class TestEndToEnd:
     def test_full_pipeline_success(self):
         reg = SkillRegistry()
-        reg.register(CounterSkill(done_after=2))
+        reg.register(CounterSkill(done_after=2, status=SkillStatus.SUCCESS))
         ex = SkillExecutor()
         adapter = MockAdapter(success_from_step=2)
 

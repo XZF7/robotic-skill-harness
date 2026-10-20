@@ -1,4 +1,4 @@
-"""SkillExecutor: 执行一个 RobotSkill 直到 is_done 或超时。"""
+"""SkillExecutor: 执行一个 RobotSkill 直到 is_done 或 env 提前结束。"""
 from __future__ import annotations
 
 from typing import Callable, Optional
@@ -14,28 +14,15 @@ from interfaces import (
 )
 
 
-def _failure_type_from_obs(obs: RobotObservation) -> FailureType:
-    """从观测的特权真值中尽量提取失败类型；缺省 UNKNOWN。"""
-    try:
-        contact = getattr(obs.truth, "contact", None) or {}
-        raw = contact.get("failure_type")
-        if isinstance(raw, FailureType):
-            return raw
-        if isinstance(raw, str):
-            return FailureType(raw)
-    except (ValueError, AttributeError):
-        pass
-    return FailureType.UNKNOWN
-
-
 class SkillExecutor:
-    """执行技能：reset → 循环 act(+adapter.step) → 判定结果。
+    """执行技能：reset -> 循环 act(+adapter.step) -> 由技能自身 result() 定成败。
 
-    终止语义:
-    - skill.is_done 为 True 时: 依据最终观测 truth.success 判 SUCCESS/FAILURE。
-    - 步数预算耗尽 (steps >= max_steps) 仍未 done: TIMEOUT。
-    - abort_check 回调返回 True: ABORTED。
-    - skill.act 抛异常: FAILURE (FailureType.MOTION_FAIL)。
+    单一权威结果 (SkillResult):
+    - 技能完成 (is_done) 或 env 提前终止/截断 -> 返回 skill.result(final_obs)。
+      技能自报 SUCCESS/FAILURE；executor 不看 truth.success。
+    - 步数预算耗尽 -> TIMEOUT (executor 产生)。
+    - abort_check 返回 True -> ABORTED (executor 产生)。
+    - skill.act 抛异常 -> FAILURE (FailureType.MOTION_FAIL, executor 产生)。
 
     mock 模式: 不传 adapter 时观测不推进，技能自行维护内部进度 (is_done)。
     """
@@ -86,7 +73,7 @@ class SkillExecutor:
                 )
             try:
                 action = skill.act(current)
-            except Exception as exc:  # noqa: BLE001 — 运行时兜底
+            except Exception as exc:  # noqa: BLE001 - 运行时兜底
                 failure = FailureEvent(
                     type=FailureType.MOTION_FAIL,
                     step=steps,
@@ -104,25 +91,8 @@ class SkillExecutor:
             if adapter is not None:
                 step_result = adapter.step(action)
                 current = step_result.observation
+                if step_result.episode.terminated or step_result.episode.truncated:
+                    break
 
-        # skill.is_done 为 True：以特权真值 success 判定成功/失败。
-        if current.truth.success:
-            return SkillResult(
-                status=SkillStatus.SUCCESS,
-                skill_id=skill.skill_id,
-                steps=steps,
-                message="skill goal reached",
-            )
-        failure = FailureEvent(
-            type=_failure_type_from_obs(current),
-            step=steps,
-            timestamp=float(current.timestamp),
-            detail={"truth_success": False},
-        )
-        return SkillResult(
-            status=SkillStatus.FAILURE,
-            skill_id=skill.skill_id,
-            steps=steps,
-            message="skill completed without success",
-            failure=failure,
-        )
+        # 技能完成 或 env 提前结束 -> 权威结果来自技能自身 (executor 不看 truth)。
+        return skill.result(current)
