@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# ManiSkill 环境激活脚本
+# 修复：系统 LD_LIBRARY_PATH 含 /usr/local/cuda-12.1/lib64，
+# 其 libnvJitLink.so.12 (12.1.105) 会遮蔽 torch 自带的 12.4.127 版，
+# 导致 libcusparse 报 undefined symbol __nvJitLinkComplete_12_4。
+# 用法：source scripts/activate_env.sh
+ENV=/data02/xzf/envs/maniskill
+NVJT="$ENV/lib/python3.10/site-packages/nvidia/nvjitlink/lib"
+export PATH="$ENV/bin:$PATH"
+export LD_LIBRARY_PATH="$NVJT:${LD_LIBRARY_PATH}"
+echo "[maniskill] activated (python=$ENV/bin/python)"

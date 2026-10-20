@@ -1,0 +1,208 @@
+sh: /home/shidi/miniconda3/lib/libtinfo.so.6: no version information available (required by sh)
+sh: /home/shidi/miniconda3/lib/libtinfo.so.6: no version information available (required by sh)
+/data02/xzf/envs/maniskill/lib/python3.10/site-packages/torch/random.py:183: UserWarning: CUDA reports that you have 4 available devices, and you have used fork_rng without explicitly specifying which devices are being used. For safety, we initialize *every* CUDA device by default, which can be quite slow if you have a lot of CUDAs. If you know that you are only making use of a few CUDA devices, set the environment variable CUDA_VISIBLE_DEVICES or the 'devices' keyword argument of fork_rng with the set of devices you are actually using. For example, if you are using CPU only, set device.upper()_VISIBLE_DEVICES= or devices=[]; if you are using device 0 only, set CUDA_VISIBLE_DEVICES=0 or devices=[0].  To initialize all devices and suppress this warning, set the 'devices' keyword argument to `range(torch.cuda.device_count())`.
+  warnings.warn(message)
+Observation space Dict()
+Action space Box(-1.0, 1.0, (8,), float32)
+Control mode pd_joint_delta_pos
+Reward mode normalized_dense
+reward tensor([0.0658])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([1], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0807])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([2], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0910])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([3], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0865])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([4], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0869])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([5], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0881])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([6], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0952])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([7], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1068])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([8], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1111])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([9], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1185])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([10], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1241])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([11], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1293])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([12], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1362])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([13], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1350])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([14], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1231])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([15], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1144])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([16], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1062])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([17], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1046])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([18], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1104])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([19], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1170])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([20], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.1082])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([21], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0959])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([22], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0985])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([23], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0880])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([24], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0685])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([25], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0593])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([26], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0620])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([27], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0607])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([28], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0618])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([29], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0679])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([30], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0769])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([31], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0933])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([32], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0880])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([33], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0852])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([34], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0805])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([35], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0770])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([36], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0780])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([37], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0760])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([38], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0775])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([39], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0782])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([40], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0708])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([41], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0608])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([42], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0609])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([43], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0608])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([44], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0649])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([45], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0692])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([46], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0630])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([47], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0614])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([48], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0625])
+terminated tensor([False])
+truncated tensor([False])
+info {'elapsed_steps': tensor([49], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
+reward tensor([0.0551])
+terminated tensor([False])
+truncated tensor([True])
+info {'elapsed_steps': tensor([50], dtype=torch.int32), 'success': tensor([False]), 'is_obj_placed': tensor([False]), 'is_robot_static': tensor([False]), 'is_grasped': tensor([False])}
