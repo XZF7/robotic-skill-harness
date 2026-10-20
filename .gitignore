@@ -32,3 +32,10 @@ trajectory/
 
 # ManiSkill motion-planning example outputs
 demos/
+
+# M4 数据集: 原始数据 (dataset.npz / episodes_meta.json) 不入库, 仅提交 manifest.json
+!data/
+data/*
+!data/m4/
+data/m4/*
+!data/m4/manifest.json

@@ -1,0 +1,2390 @@
+{
+  "dataset": "m4_pickcube_failure_prediction",
+  "generated_at": "2026-10-20T15:31:54.578781+00:00",
+  "config": {
+    "mode": "full",
+    "horizon": 20,
+    "max_episode_steps": 200,
+    "feature_dim": 22,
+    "feature_names": [
+      "qpos_0",
+      "qpos_1",
+      "qpos_2",
+      "qpos_3",
+      "qpos_4",
+      "qpos_5",
+      "qpos_6",
+      "qvel_0",
+      "qvel_1",
+      "qvel_2",
+      "qvel_3",
+      "qvel_4",
+      "qvel_5",
+      "qvel_6",
+      "gripper",
+      "tcp_x",
+      "tcp_y",
+      "tcp_z",
+      "tcp_qw",
+      "tcp_qx",
+      "tcp_qy",
+      "tcp_qz"
+    ],
+    "num_episodes": 150,
+    "num_frames": 11423
+  },
+  "schedule": [
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 0,
+      "seed_requested": 0
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 1,
+      "seed_requested": 1
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 2,
+      "seed_requested": 2
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 3,
+      "seed_requested": 3
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 4,
+      "seed_requested": 4
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 5,
+      "seed_requested": 5
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 6,
+      "seed_requested": 6
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 7,
+      "seed_requested": 7
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 1008,
+      "seed_requested": 8
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 9,
+      "seed_requested": 9
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 10,
+      "seed_requested": 10
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 11,
+      "seed_requested": 11
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 12,
+      "seed_requested": 12
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 13,
+      "seed_requested": 13
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 14,
+      "seed_requested": 14
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 15,
+      "seed_requested": 15
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 16,
+      "seed_requested": 16
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 17,
+      "seed_requested": 17
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 18,
+      "seed_requested": 18
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 19,
+      "seed_requested": 19
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 20,
+      "seed_requested": 20
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 21,
+      "seed_requested": 21
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 1022,
+      "seed_requested": 22
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 23,
+      "seed_requested": 23
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 24,
+      "seed_requested": 24
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 25,
+      "seed_requested": 25
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 26,
+      "seed_requested": 26
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 27,
+      "seed_requested": 27
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 28,
+      "seed_requested": 28
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 29,
+      "seed_requested": 29
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 30,
+      "seed_requested": 30
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 31,
+      "seed_requested": 31
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 32,
+      "seed_requested": 32
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 33,
+      "seed_requested": 33
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 34,
+      "seed_requested": 34
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 35,
+      "seed_requested": 35
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 36,
+      "seed_requested": 36
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 37,
+      "seed_requested": 37
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 38,
+      "seed_requested": 38
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 39,
+      "seed_requested": 39
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 40,
+      "seed_requested": 40
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 41,
+      "seed_requested": 41
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 42,
+      "seed_requested": 42
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 43,
+      "seed_requested": 43
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 44,
+      "seed_requested": 44
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 45,
+      "seed_requested": 45
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 46,
+      "seed_requested": 46
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 47,
+      "seed_requested": 47
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 48,
+      "seed_requested": 48
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 49,
+      "seed_requested": 49
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 50,
+      "seed_requested": 50
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 51,
+      "seed_requested": 51
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 52,
+      "seed_requested": 52
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 53,
+      "seed_requested": 53
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 54,
+      "seed_requested": 54
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 55,
+      "seed_requested": 55
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 56,
+      "seed_requested": 56
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 57,
+      "seed_requested": 57
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 1058,
+      "seed_requested": 58
+    },
+    {
+      "scenario": "normal",
+      "fault_type": null,
+      "fault_params": {},
+      "fault_step": null,
+      "duration": 1,
+      "seed": 59,
+      "seed_requested": 59
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.06,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 0,
+      "seed_requested": 0
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 1,
+      "seed_requested": 1
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 2,
+      "seed_requested": 2
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 3,
+      "seed_requested": 3
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 4,
+      "seed_requested": 4
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 45,
+      "duration": 1,
+      "seed": 5,
+      "seed_requested": 5
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.06,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 6,
+      "seed_requested": 6
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 7,
+      "seed_requested": 7
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 1008,
+      "seed_requested": 8
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 9,
+      "seed_requested": 9
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 10,
+      "seed_requested": 10
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 45,
+      "duration": 1,
+      "seed": 11,
+      "seed_requested": 11
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.06,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 12,
+      "seed_requested": 12
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 13,
+      "seed_requested": 13
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 14,
+      "seed_requested": 14
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 15,
+      "seed_requested": 15
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 16,
+      "seed_requested": 16
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 45,
+      "duration": 1,
+      "seed": 17,
+      "seed_requested": 17
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.06,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 18,
+      "seed_requested": 18
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 19,
+      "seed_requested": 19
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 20,
+      "seed_requested": 20
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 21,
+      "seed_requested": 21
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 1022,
+      "seed_requested": 22
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 45,
+      "duration": 1,
+      "seed": 23,
+      "seed_requested": 23
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.06,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 24,
+      "seed_requested": 24
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 25,
+      "seed_requested": 25
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 12,
+      "duration": 1,
+      "seed": 26,
+      "seed_requested": 26
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 27,
+      "seed_requested": 27
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.15,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 28,
+      "seed_requested": 28
+    },
+    {
+      "scenario": "object_displacement",
+      "fault_type": "object_displacement",
+      "fault_params": {
+        "delta": [
+          0.1,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 45,
+      "duration": 1,
+      "seed": 29,
+      "seed_requested": 29
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.5,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 0,
+      "seed_requested": 0
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 1,
+      "seed_requested": 1
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 2,
+      "seed_requested": 2
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 3,
+      "seed_requested": 3
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 30,
+      "duration": 1,
+      "seed": 4,
+      "seed_requested": 4
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 5,
+      "seed_requested": 5
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.5,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 6,
+      "seed_requested": 6
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 7,
+      "seed_requested": 7
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 1008,
+      "seed_requested": 8
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 9,
+      "seed_requested": 9
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 30,
+      "duration": 1,
+      "seed": 10,
+      "seed_requested": 10
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 11,
+      "seed_requested": 11
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.5,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 12,
+      "seed_requested": 12
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 13,
+      "seed_requested": 13
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 14,
+      "seed_requested": 14
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 15,
+      "seed_requested": 15
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 30,
+      "duration": 1,
+      "seed": 16,
+      "seed_requested": 16
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 17,
+      "seed_requested": 17
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.5,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 18,
+      "seed_requested": 18
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 19,
+      "seed_requested": 19
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 20,
+      "seed_requested": 20
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 21,
+      "seed_requested": 21
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 30,
+      "duration": 1,
+      "seed": 1022,
+      "seed_requested": 22
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 23,
+      "seed_requested": 23
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.5,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 24,
+      "seed_requested": 24
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 25,
+      "seed_requested": 25
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 15,
+      "duration": 1,
+      "seed": 26,
+      "seed_requested": 26
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.8,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 27,
+      "seed_requested": 27
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 30,
+      "duration": 1,
+      "seed": 28,
+      "seed_requested": 28
+    },
+    {
+      "scenario": "object_impulse",
+      "fault_type": "object_impulse",
+      "fault_params": {
+        "velocity": [
+          0.6,
+          0.0,
+          0.0
+        ]
+      },
+      "fault_step": 20,
+      "duration": 1,
+      "seed": 29,
+      "seed_requested": 29
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.2,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 0,
+      "seed_requested": 0
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 1,
+      "seed_requested": 1
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 2,
+      "seed_requested": 2
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 34,
+      "duration": 1,
+      "seed": 3,
+      "seed_requested": 3
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 38,
+      "duration": 1,
+      "seed": 4,
+      "seed_requested": 4
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 5,
+      "seed_requested": 5
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.2,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 6,
+      "seed_requested": 6
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 7,
+      "seed_requested": 7
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 1008,
+      "seed_requested": 8
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 34,
+      "duration": 1,
+      "seed": 9,
+      "seed_requested": 9
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 38,
+      "duration": 1,
+      "seed": 10,
+      "seed_requested": 10
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 11,
+      "seed_requested": 11
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.2,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 12,
+      "seed_requested": 12
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 13,
+      "seed_requested": 13
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 14,
+      "seed_requested": 14
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 34,
+      "duration": 1,
+      "seed": 15,
+      "seed_requested": 15
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 38,
+      "duration": 1,
+      "seed": 16,
+      "seed_requested": 16
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 17,
+      "seed_requested": 17
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.2,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 18,
+      "seed_requested": 18
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 19,
+      "seed_requested": 19
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 20,
+      "seed_requested": 20
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 34,
+      "duration": 1,
+      "seed": 21,
+      "seed_requested": 21
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 38,
+      "duration": 1,
+      "seed": 1022,
+      "seed_requested": 22
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 23,
+      "seed_requested": 23
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.2,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 24,
+      "seed_requested": 24
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 25,
+      "seed_requested": 25
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 28,
+      "duration": 1,
+      "seed": 26,
+      "seed_requested": 26
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 34,
+      "duration": 1,
+      "seed": 27,
+      "seed_requested": 27
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.4,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 38,
+      "duration": 1,
+      "seed": 28,
+      "seed_requested": 28
+    },
+    {
+      "scenario": "grasp_perturb",
+      "fault_type": "grasp_perturb",
+      "fault_params": {
+        "scale": 0.3,
+        "joints": [
+          0,
+          1,
+          3
+        ]
+      },
+      "fault_step": 25,
+      "duration": 1,
+      "seed": 29,
+      "seed_requested": 29
+    }
+  ],
+  "scenarios": {
+    "normal": {
+      "num_episodes": 60,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        59,
+        1008,
+        1022,
+        1058
+      ],
+      "success_count": 60,
+      "failure_count": 0,
+      "injection_attempted": 0,
+      "injection_success": 0,
+      "param_variants": [
+        {
+          "fault_params": {},
+          "fault_type": null
+        }
+      ]
+    },
+    "object_displacement": {
+      "num_episodes": 30,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        1008,
+        1022
+      ],
+      "success_count": 0,
+      "failure_count": 30,
+      "injection_attempted": 30,
+      "injection_success": 30,
+      "param_variants": [
+        {
+          "fault_params": {
+            "delta": [
+              0.06,
+              0.0,
+              0.0
+            ],
+            "injection_step": 12,
+            "duration": 1
+          },
+          "fault_type": "object_displacement"
+        },
+        {
+          "fault_params": {
+            "delta": [
+              0.1,
+              0.0,
+              0.0
+            ],
+            "injection_step": 12,
+            "duration": 1
+          },
+          "fault_type": "object_displacement"
+        },
+        {
+          "fault_params": {
+            "delta": [
+              0.15,
+              0.0,
+              0.0
+            ],
+            "injection_step": 12,
+            "duration": 1
+          },
+          "fault_type": "object_displacement"
+        },
+        {
+          "fault_params": {
+            "delta": [
+              0.1,
+              0.0,
+              0.0
+            ],
+            "injection_step": 20,
+            "duration": 1
+          },
+          "fault_type": "object_displacement"
+        },
+        {
+          "fault_params": {
+            "delta": [
+              0.15,
+              0.0,
+              0.0
+            ],
+            "injection_step": 25,
+            "duration": 1
+          },
+          "fault_type": "object_displacement"
+        },
+        {
+          "fault_params": {
+            "delta": [
+              0.1,
+              0.0,
+              0.0
+            ],
+            "injection_step": 45,
+            "duration": 1
+          },
+          "fault_type": "object_displacement"
+        }
+      ]
+    },
+    "object_impulse": {
+      "num_episodes": 30,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        1008,
+        1022
+      ],
+      "success_count": 0,
+      "failure_count": 30,
+      "injection_attempted": 30,
+      "injection_success": 30,
+      "param_variants": [
+        {
+          "fault_params": {
+            "velocity": [
+              0.5,
+              0.0,
+              0.0
+            ],
+            "injection_step": 15,
+            "duration": 1
+          },
+          "fault_type": "object_impulse"
+        },
+        {
+          "fault_params": {
+            "velocity": [
+              0.8,
+              0.0,
+              0.0
+            ],
+            "injection_step": 15,
+            "duration": 1
+          },
+          "fault_type": "object_impulse"
+        },
+        {
+          "fault_params": {
+            "velocity": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "injection_step": 15,
+            "duration": 1
+          },
+          "fault_type": "object_impulse"
+        },
+        {
+          "fault_params": {
+            "velocity": [
+              0.8,
+              0.0,
+              0.0
+            ],
+            "injection_step": 25,
+            "duration": 1
+          },
+          "fault_type": "object_impulse"
+        },
+        {
+          "fault_params": {
+            "velocity": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "injection_step": 30,
+            "duration": 1
+          },
+          "fault_type": "object_impulse"
+        },
+        {
+          "fault_params": {
+            "velocity": [
+              0.6,
+              0.0,
+              0.0
+            ],
+            "injection_step": 20,
+            "duration": 1
+          },
+          "fault_type": "object_impulse"
+        }
+      ]
+    },
+    "grasp_perturb": {
+      "num_episodes": 30,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        1008,
+        1022
+      ],
+      "success_count": 16,
+      "failure_count": 14,
+      "injection_attempted": 30,
+      "injection_success": 30,
+      "param_variants": [
+        {
+          "fault_params": {
+            "scale": 0.2,
+            "joints": [
+              0,
+              1,
+              3
+            ],
+            "injection_step": 28,
+            "duration": 1
+          },
+          "fault_type": "grasp_perturb"
+        },
+        {
+          "fault_params": {
+            "scale": 0.3,
+            "joints": [
+              0,
+              1,
+              3
+            ],
+            "injection_step": 28,
+            "duration": 1
+          },
+          "fault_type": "grasp_perturb"
+        },
+        {
+          "fault_params": {
+            "scale": 0.4,
+            "joints": [
+              0,
+              1,
+              3
+            ],
+            "injection_step": 28,
+            "duration": 1
+          },
+          "fault_type": "grasp_perturb"
+        },
+        {
+          "fault_params": {
+            "scale": 0.3,
+            "joints": [
+              0,
+              1,
+              3
+            ],
+            "injection_step": 34,
+            "duration": 1
+          },
+          "fault_type": "grasp_perturb"
+        },
+        {
+          "fault_params": {
+            "scale": 0.4,
+            "joints": [
+              0,
+              1,
+              3
+            ],
+            "injection_step": 38,
+            "duration": 1
+          },
+          "fault_type": "grasp_perturb"
+        },
+        {
+          "fault_params": {
+            "scale": 0.3,
+            "joints": [
+              0,
+              1,
+              3
+            ],
+            "injection_step": 25,
+            "duration": 1
+          },
+          "fault_type": "grasp_perturb"
+        }
+      ]
+    }
+  },
+  "class_distribution": {
+    "success_episodes": 76,
+    "failure_episodes": 74,
+    "success_rate": 0.5066666666666667,
+    "positive_frame_fraction": 0.13604132014356998
+  },
+  "files": {
+    "features": "dataset.npz",
+    "episodes_meta": "episodes_meta.json"
+  }
+}
