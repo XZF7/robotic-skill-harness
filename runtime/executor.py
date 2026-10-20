@@ -15,6 +15,13 @@ from interfaces import (
 )
 
 
+def _to_float(v) -> float:
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return float("nan")
+
+
 class SkillExecutor:
     """执行技能：reset -> 循环 act(+adapter.step) -> 由技能自身 result() 定成败。
 
@@ -43,6 +50,7 @@ class SkillExecutor:
         max_steps: Optional[int] = None,
         adapter: Optional[SimulatorAdapter] = None,
         abort_check: Optional[Callable[[], bool]] = None,
+        step_hook: Optional[Callable[[RobotObservation], Optional[object]]] = None,
         reset_skill: bool = True,
     ) -> SkillResult:
         budget = max_steps if max_steps is not None else self.default_max_steps
@@ -103,5 +111,42 @@ class SkillExecutor:
                 if step_result.episode.terminated or step_result.episode.truncated:
                     break
 
+            # 学习预判 (M4-B): 每步预测失败风险, 高风险提前中止本 attempt。
+            # step_hook 只观察、不发指令; 返回非 None 即「提前重试」信号。
+            if step_hook is not None:
+                trigger = step_hook(current)
+                if trigger is not None:
+                    return self._predictive_result(skill, steps, current, trigger)
+
         # 技能完成 或 env 提前结束 -> 权威结果来自技能自身 (executor 不看 truth)。
         return skill.result(current)
+
+    def _predictive_result(
+        self,
+        skill: RobotSkill,
+        steps: int,
+        obs: RobotObservation,
+        trigger: object,
+    ) -> SkillResult:
+        """把学习预判触发转成一次提前中止的 FAILURE (FailureType.UNKNOWN + predictive 标记)。
+
+        交给 RecoveryRunner 走规则恢复 (RETRY/ABORT), 不绕过 max_retries。
+        """
+        detail = {"predictive": True}
+        for key in ("prob", "confidence", "threshold", "step"):
+            val = getattr(trigger, key, None)
+            if val is not None:
+                detail[f"predict_{key}"] = _to_float(val)
+        failure = FailureEvent(
+            type=FailureType.UNKNOWN,
+            step=steps,
+            timestamp=_to_float(getattr(obs, "timestamp", 0.0)),
+            detail=detail,
+        )
+        return SkillResult(
+            status=SkillStatus.FAILURE,
+            skill_id=skill.skill_id,
+            steps=steps,
+            message="predictive recovery triggered",
+            failure=failure,
+        )
