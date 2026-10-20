@@ -92,3 +92,31 @@ class TestBatch:
 
     def test_empty_batch(self):
         assert episodes_from_json(episodes_to_json([])) == []
+
+
+class TestFaultRecoveryInMetrics:
+    """FaultRecord / RecoveryResult 对象直接嵌入 metrics 的序列化 (M3-D)。"""
+    def test_fault_and_recovery_objects_in_metrics_serialize(self):
+        from interfaces import FaultRecord, RecoveryResult, RecoveryDecision, RecoveryAction
+        from eval.serialization import episode_to_dict, episode_from_dict
+        from eval.fault_injection import extract_fault
+
+        sr = SkillResult(SkillStatus.FAILURE, "pick", 10)
+        ep = EpisodeResult(
+            task_id="t", success=False, steps=20, reward=0.1, skill_results=[sr],
+            metrics={
+                "fault": FaultRecord("grasp_perturb", True, step=3, params={"d": 0.1}),
+                "recovery": RecoveryResult(attempts=2, final_skill_result=sr,
+                    decisions=[RecoveryDecision(RecoveryAction.RETRY, 1)], recovered=False),
+                "privileged_access": False, "seed": 5,
+            },
+        )
+        d = episode_to_dict(ep)
+        # 对象被归一化为 dict (JSON 可序列化)
+        assert isinstance(d["metrics"]["fault"], dict)
+        assert isinstance(d["metrics"]["recovery"], dict)
+        json.dumps(d)  # 不得抛异常
+        back = episode_from_dict(d)
+        f = extract_fault(back)
+        assert f.fault_type == "grasp_perturb" and f.injected and f.step == 3
+        assert f.params == {"d": 0.1}
