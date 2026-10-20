@@ -86,3 +86,116 @@ def make_mock_episodes(
             source=source,
         ))
     return out
+
+
+# ---- 故障注入 mock episode (M3-D smoke test / 种子扫描用, source='mock') ----
+
+def make_mock_fault_episode(
+    task_id: str,
+    *,
+    seed: int,
+    fault_type: str,
+    injected: bool = True,
+    success: bool = False,
+    detected: bool = True,
+    recovered: bool = False,
+    attempts: int = 1,
+    steps: int = 80,
+    reward: float = 0.0,
+    baseline: str = "b0",
+    privileged_access: bool = False,
+    fault_params: Optional[dict] = None,
+    source: str = "mock",
+    failure_type: FailureType = FailureType.GRIP_FAIL,
+    failure_step: Optional[int] = None,
+) -> EpisodeResult:
+    """合成一个带故障注入信息的 episode (确定性, 由调用方给出全部关键标志)。
+
+    metrics 里挂规范键: fault / recovery / privileged_access / baseline / seed / detected。
+    用于 smoke test 与可配置种子扫描; 严禁冒充真实 benchmark (source='mock', require_sim 会拦截)。
+    """
+    from interfaces import FaultRecord, RecoveryResult, RecoveryDecision, RecoveryAction
+
+    fault = FaultRecord(
+        fault_type=fault_type,
+        injected=injected,
+        step=0 if failure_step is None else max(0, failure_step - 1),
+        params=dict(fault_params or {}),
+    )
+    final_status = SkillStatus.SUCCESS if success else SkillStatus.FAILURE
+    final_sr = SkillResult(status=final_status, skill_id="pick", steps=steps)
+    decisions = []
+    if attempts > 1:
+        for i in range(1, attempts):
+            decisions.append(RecoveryDecision(
+                action=RecoveryAction.RETRY, retry_count=i, reason=failure_type.value,
+            ))
+    recovery = RecoveryResult(
+        attempts=attempts,
+        final_skill_result=final_sr,
+        decisions=decisions,
+        recovered=recovered,
+        aborted=(not recovered and attempts > 1),
+    )
+
+    failures: List[FailureEvent] = []
+    if not success or attempts > 1 or failure_step is not None:
+        failures.append(FailureEvent(
+            type=failure_type,
+            step=failure_step if failure_step is not None else steps // 2,
+            timestamp=float(failure_step if failure_step is not None else steps // 2) * 0.05,
+        ))
+
+    from eval.fault_injection import (
+        attach_fault, attach_recovery, attach_privileged, attach_baseline,
+    )
+    ep = EpisodeResult(
+        task_id=task_id,
+        success=success,
+        steps=steps,
+        reward=reward,
+        skill_results=[final_sr],
+        failures=failures,
+        metrics={"seed": seed, "detected": detected},
+        source=source,
+    )
+    attach_fault(ep, fault)
+    attach_recovery(ep, recovery)
+    attach_privileged(ep, privileged_access)
+    attach_baseline(ep, baseline)
+    return ep
+
+
+def make_mock_fault_episodes(
+    task_id: str,
+    fault_type: str,
+    seeds: List[int],
+    *,
+    baseline: str = "b0",
+    injected: bool = True,
+    recovered: bool = False,
+    attempts: int = 1,
+    success: bool = False,
+    detected: bool = False,
+    privileged_access: bool = False,
+    fault_params: Optional[dict] = None,
+    source: str = "mock",
+) -> List[EpisodeResult]:
+    """批量合成 matched 的故障注入 episode (给定 seed 列表)。"""
+    out: List[EpisodeResult] = []
+    for seed in seeds:
+        out.append(make_mock_fault_episode(
+            task_id=task_id,
+            seed=seed,
+            fault_type=fault_type,
+            injected=injected,
+            success=success,
+            detected=detected,
+            recovered=recovered,
+            attempts=attempts,
+            baseline=baseline,
+            privileged_access=privileged_access,
+            fault_params=fault_params,
+            source=source,
+        ))
+    return out
