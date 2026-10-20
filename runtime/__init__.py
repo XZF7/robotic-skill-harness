@@ -21,6 +21,14 @@ from .recovery import (
     RecoveryStateMachine,
 )
 from .logger import ExecutionLogger
+from .predictive import (
+    PredictiveConfig,
+    PredictiveGuard,
+    PredictiveTrigger,
+    PredictionRecord,
+    RecoveryMode,
+    load_predictor_from_checkpoint,
+)
 from .registry import SkillRegistry
 from .state_machine import (
     TaskState,
@@ -46,6 +54,12 @@ __all__ = [
     "TaskStateMachine",
     "skill_status_to_task_state",
     "ExecutionLogger",
+    "RecoveryMode",
+    "PredictiveGuard",
+    "PredictiveTrigger",
+    "PredictionRecord",
+    "PredictiveConfig",
+    "load_predictor_from_checkpoint",
     "SkillNotFoundError",
     "DuplicateSkillError",
     "InvalidTransitionError",
