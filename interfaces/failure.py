@@ -13,6 +13,8 @@ class FailureType(str, Enum):
     GRIP_FAIL = "grip_fail"        # 抓取失败/滑脱
     MOTION_FAIL = "motion_fail"    # 规划/运动失败
     TIMEOUT = "timeout"            # 步数/时间超限
+    INVALID_OBS = "invalid_obs"    # 无效/异常观测
+    RECOVERY_EXHAUSTED = "recovery_exhausted"  # 恢复重试耗尽
     UNKNOWN = "unknown"
 
 

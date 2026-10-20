@@ -7,6 +7,8 @@ from interfaces import (
     SkillStatus, SkillResult, RobotSkill,
     EpisodeInfo, StepResult, SimulatorAdapter,
     FailureType, FailureEvent,
+    RecoveryAction, RecoveryDecision, RecoveryResult,
+    FaultRecord,
     EpisodeResult, EpisodeMetrics,
 )
 
@@ -25,7 +27,10 @@ class TestEnums:
         assert {s.value for s in SkillStatus} == {"success", "failure", "timeout", "aborted"}
 
     def test_failure_type_values(self):
-        assert {f.value for f in FailureType} == {"drop", "collision", "grip_fail", "motion_fail", "timeout", "unknown"}
+        assert {f.value for f in FailureType} == {
+            "drop", "collision", "grip_fail", "motion_fail", "timeout",
+            "invalid_obs", "recovery_exhausted", "unknown",
+        }
 
 
 class TestObservation:
@@ -59,6 +64,17 @@ class TestABC:
         with pytest.raises(TypeError):
             RobotSkill()
 
+    def test_privileged_access_default_false(self):
+        class PolicySkill(RobotSkill):
+            skill_id = "policy"
+            def reset(self, obs): pass
+            def act(self, obs): return np.zeros(8)
+            @property
+            def is_done(self): return False
+            def result(self, final_obs=None):
+                return SkillResult(SkillStatus.SUCCESS, "policy", 0)
+        assert PolicySkill().privileged_access is False
+
 
 class TestEpisodeInfo:
     def test_three_flags_independent(self):
@@ -86,6 +102,32 @@ class TestEpisodeResult:
     def test_default_source_is_mock(self):
         r = EpisodeResult(task_id="x", success=False, steps=0, reward=0.0)
         assert r.source == "mock"
+
+
+class TestRecovery:
+    def test_actions(self):
+        assert {a.value for a in RecoveryAction} == {"retry", "reobserve", "abort"}
+
+    def test_decision(self):
+        d = RecoveryDecision(action=RecoveryAction.RETRY, retry_count=1, reason="grip_fail")
+        assert d.action is RecoveryAction.RETRY and d.retry_count == 1
+
+    def test_recovery_result_holds_final_skill_result(self):
+        sr = SkillResult(SkillStatus.SUCCESS, "pick", 10)
+        r = RecoveryResult(attempts=2, final_skill_result=sr, recovered=True)
+        assert r.attempts == 2 and r.recovered and r.final_skill_result is sr
+
+
+class TestFaultRecord:
+    def test_record(self):
+        f = FaultRecord(fault_type="object_displacement", injected=True,
+                        step=5, params={"delta": 0.05})
+        assert f.injected and f.fault_type == "object_displacement" and f.step == 5
+
+    def test_not_injected(self):
+        f = FaultRecord(fault_type="grasp_perturb", injected=False,
+                        detail={"reason": "no collision"})
+        assert not f.injected and f.detail["reason"]
 
 
 class TestMetrics:

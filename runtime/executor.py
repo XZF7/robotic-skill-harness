@@ -32,6 +32,8 @@ class SkillExecutor:
         self.default_max_steps = default_max_steps
         # 最近一次 adapter.step 产生的 EpisodeInfo (供 harness 取最终真值)。
         self.last_episode: Optional[EpisodeInfo] = None
+        # 累计 episode reward (所有步奖励之和，供评估层取累计值而非末步值)。
+        self.total_reward: float = 0.0
 
     def execute(
         self,
@@ -48,6 +50,7 @@ class SkillExecutor:
             raise ValueError("max_steps 不能为负")
 
         self.last_episode = None
+        self.total_reward = 0.0
         if reset_skill:
             skill.reset(obs)
         current: RobotObservation = obs
@@ -96,6 +99,7 @@ class SkillExecutor:
                 step_result = adapter.step(action)
                 current = step_result.observation
                 self.last_episode = step_result.episode
+                self.total_reward += float(step_result.episode.reward)
                 if step_result.episode.terminated or step_result.episode.truncated:
                     break
 

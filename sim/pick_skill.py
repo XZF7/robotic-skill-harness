@@ -36,9 +36,15 @@ _FINGER_LENGTH = 0.025    # 抓取深度
 
 
 class PickCubeSkill(RobotSkill):
-    """PickCube 脚本化抓取技能 (mplib 运动规划)。"""
+    """PickCube 脚本化抓取技能 (mplib 运动规划)。
+
+    oracle/状态基线 (B0): 使用特权物体位姿 (cube.pose / goal_site.pose / get_actor_obb)
+    做运动规划，并用 obs.truth.success 判定技能成功。这些是特权真值，仅评估层/脚本基线
+    可用，不是观测型策略；M3-B 的失败检测必须用 obs.policy (可观测)，不得读 truth。
+    """
 
     skill_id = "pick_cube_mplib"
+    privileged_access = True
 
     def __init__(self, adapter):
         # adapter 提供底层 env (unwrapped) 用于规划

@@ -48,6 +48,15 @@ class RobotSkill(ABC):
 
     skill_id: str = "abstract"
 
+    # 特权真值访问声明 (四类信息隔离):
+    #   observable robot state  = obs.policy (qpos/qvel/tcp_pose/gripper/images)
+    #   policy-accessible obs   = obs.policy (策略可读的观测)
+    #   privileged ground truth = obs.truth (物体位姿/success/is_grasped/contact)
+    #   evaluation-only info    = 仅评估层可用 (如 truth.success 判任务成功)
+    # False (默认): 观测型策略, 严禁访问 obs.truth。
+    # True:         oracle/状态基线, 可用特权位姿规划 + truth 判成功 (须显式标注)。
+    privileged_access: bool = False
+
     @abstractmethod
     def reset(self, obs: RobotObservation) -> None:
         """进入新 episode 时重置技能内部状态。"""

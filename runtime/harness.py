@@ -33,11 +33,13 @@ class TaskRunResult:
     - skill_result: 唯一权威 SkillResult (来自 executor，不得二次判定)。
     - episode: 最终 EpisodeInfo (env 任务成功真值 terminated/truncated/success)。
     - task_state: TaskState (由 skill_result 经状态机推导)。
+    - total_reward: 累计 episode reward (所有步之和；末步 reward 另存 metrics)。
     """
 
     skill_result: SkillResult
     episode: Optional[EpisodeInfo]
     task_state: TaskState
+    total_reward: float = 0.0
 
     def to_episode_result(self, task_id: str) -> EpisodeResult:
         """构造供 Agent D 评估框架消费的 EpisodeResult(source="sim")。
@@ -48,7 +50,7 @@ class TaskRunResult:
         sr = self.skill_result
         episode = self.episode
         success = bool(episode.success) if episode is not None else False
-        reward = float(episode.reward) if episode is not None else 0.0
+        reward = self.total_reward  # 累计 reward (修复: 原取末步 reward)
         metrics = {
             "skill_status": sr.status.value,
             "skill_steps": sr.steps,
@@ -57,6 +59,7 @@ class TaskRunResult:
         if episode is not None:
             metrics["terminated"] = bool(episode.terminated)
             metrics["truncated"] = bool(episode.truncated)
+            metrics["final_step_reward"] = float(episode.reward)  # 保留末步 reward
         return EpisodeResult(
             task_id=task_id,
             success=success,
@@ -152,6 +155,7 @@ class TaskRunner:
             skill_result=result,
             episode=episode,
             task_state=task_state,
+            total_reward=self.executor.total_reward,
         )
 
     def close(self) -> None:
