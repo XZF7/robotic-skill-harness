@@ -72,3 +72,44 @@ M2 可靠运行时（A+B 联调、失败恢复）→ M3 失败检测与恢复 �
 ### 已知小问题（不阻塞，记入后续）
 
 - `TaskRunner.to_episode_result()` 的 `reward` 取最后一步 reward 而非累计和（当前不影响 M2 验收，M3/M5 评估前需修正）。
+
+
+## Milestone 3 — 失败检测、恢复与故障注入 ✅（已验证）
+
+### M3-0 准备（Lead）
+
+- 修复 `to_episode_result()` reward 累计（原只取末步；现 `EpisodeResult.reward` 用累计，末步存 metrics.final_step_reward）。
+- 特权真值审计：`PickCubeSkill` 在 `_plan`(物体/目标位姿)、`act`/`result`(`truth.success`) 三处用特权信息 → 显式标注 `privileged_access=True`（oracle/状态基线），四类信息隔离写入契约 docstring。
+- 契约冻结 `v0.3.0-contracts`：`RecoveryAction/RecoveryDecision/RecoveryResult` + `FaultRecord` + `FailureType.INVALID_OBS/RECOVERY_EXHAUSTED` + `RobotSkill.privileged_access`。
+
+### M3-A 真实故障注入（Agent A）
+
+`sim/fault_injection.py` FaultInjector，4 种真实物理故障（`injected` 靠注入后读回物理状态核实，非凭意图）：object_displacement / object_impulse / grasp_perturb / gripper_drop。确定性种子。5 测试。
+
+### M3-B 失败检测 + 恢复（Agent B）
+
+`runtime/failure_detector.py`（只用 obs.policy 检测 INVALID_OBS/COLLISION/GRIP_FAIL/DROP，绝不读 truth）+ `runtime/recovery.py`（RecoveryManager 规则式有界重试 max_retries=2、RecoveryRunner 同 episode 内编排、每次尝试一个权威 SkillResult、结构化 trace）。30 测试。
+
+### M3-D 恢复评估（Agent D）
+
+`eval/fault_injection.py`（compute_recovery_metrics，8 指标显式定义分母）+ `eval/recovery_benchmark.py`（compare_b0_b1 matched 对比）。40 测试。
+
+### M3-C 端到端验证（Lead，`scripts/verify_m3c.py`）
+
+路径 FaultInjector → FaultInjectingAdapter → TaskRunner[B0]/RecoveryRunner[B1] → EpisodeResult(source=sim) → eval。
+
+| 故障场景 | B0 成功 | B1 成功 | 恢复成功 | 安全中止 |
+|---|---|---|---|---|
+| object_displacement (0.07m) | 1/10 | 10/10 | 9/10 | 0 |
+| grasp_perturb (0.25rad) | 5/10 | 10/10 | 5/10 | 0 |
+| object_displacement_large (0.5m) | 1/10 | 1/10 | 0 | 9/10 |
+
+- B0 task_success=0.233 → B1 task_success=0.700（Δ+0.467）。
+- B1 检测率=1.000、恢复成功率=0.609（14/23 注入且生效的失败场景恢复）、平均重试=1.39、恢复延迟≈43 步。
+- 说明：seed 8 是 trivial-success 种子（方块初始即落目标位，任务 0 步成功、故障未触发），10 种子中 9 个有效。
+
+### 已知限制 / 技术债
+
+- gripper_drop 需条件触发（is_grasped ∧ cube_airborne），harness 固定步调度未接入，仅在 A 的独立测试验证。
+- `EpisodeResult.failures` 只含最终结果的 failure，中间尝试的失败类别在 RecoveryResult.decisions 里（评估的 failure_category_counts 不含中间失败）。
+- FailureDetector 阈值（collision_qvel_threshold 等）尚未用真实动力学标定。

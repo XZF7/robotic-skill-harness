@@ -1,0 +1,759 @@
+{
+  "faults": [
+    "object_displacement",
+    "grasp_perturb",
+    "object_displacement_large"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "details": [
+    {
+      "fault": "object_displacement",
+      "seed": 0,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 83,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 1,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 77,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 2,
+      "b0": {
+        "success": false,
+        "steps": 51,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 65,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 3,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 82,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 4,
+      "b0": {
+        "success": false,
+        "steps": 75,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 97,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 5,
+      "b0": {
+        "success": false,
+        "steps": 87,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 108,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 6,
+      "b0": {
+        "success": false,
+        "steps": 70,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 83,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 7,
+      "b0": {
+        "success": false,
+        "steps": 73,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 80,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 8,
+      "b0": {
+        "success": true,
+        "steps": 0,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 0,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 9,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 79,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 0,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 93,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 1,
+      "b0": {
+        "success": true,
+        "steps": 71,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 71,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 2,
+      "b0": {
+        "success": false,
+        "steps": 51,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 79,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 3,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 97,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 4,
+      "b0": {
+        "success": false,
+        "steps": 75,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 108,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 5,
+      "b0": {
+        "success": true,
+        "steps": 81,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 81,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 6,
+      "b0": {
+        "success": true,
+        "steps": 66,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 66,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 7,
+      "b0": {
+        "success": false,
+        "steps": 73,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 83,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 8,
+      "b0": {
+        "success": true,
+        "steps": 0,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 0,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 9,
+      "b0": {
+        "success": true,
+        "steps": 77,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 77,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 0,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 1,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 2,
+      "b0": {
+        "success": false,
+        "steps": 51,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 3,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 4,
+      "b0": {
+        "success": false,
+        "steps": 75,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 5,
+      "b0": {
+        "success": false,
+        "steps": 87,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 6,
+      "b0": {
+        "success": false,
+        "steps": 70,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 7,
+      "b0": {
+        "success": false,
+        "steps": 73,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 8,
+      "b0": {
+        "success": true,
+        "steps": 0,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 0,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 9,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    }
+  ],
+  "b0": {
+    "num_episodes": 30,
+    "privileged_access": true,
+    "metrics": {
+      "task_success_rate": 0.23333333333333334,
+      "verified_fault_injection_rate": 1.0,
+      "failure_detection_rate": 0.0,
+      "recovery_success_rate": 0.0,
+      "avg_retry_count": null,
+      "recovery_latency_mean_steps": null,
+      "recovery_latency_recovered_mean_steps": null,
+      "mean_episode_length": 66.53333333333333,
+      "mean_cumulative_reward": 6.296199395396853,
+      "sum_cumulative_reward": 188.88598186190558,
+      "failure_category_counts": {
+        "motion_fail": 23
+      },
+      "fault_type_counts": {
+        "object_displacement": 18,
+        "grasp_perturb": 9
+      }
+    },
+    "numerators": {
+      "num_success": 7,
+      "num_injected": 27,
+      "num_injection_attempted": 27,
+      "num_detected": 0,
+      "num_real_failures": 23,
+      "num_recovered": 0,
+      "num_injected_failure_scenarios": 23,
+      "num_recovery_attempted": 0
+    },
+    "denominators": {
+      "task_success_rate": 30,
+      "verified_fault_injection_rate": 27,
+      "failure_detection_rate": 23,
+      "recovery_success_rate": 23,
+      "avg_retry_count": 0,
+      "recovery_latency_mean_steps": 0,
+      "mean_episode_length": 30,
+      "mean_cumulative_reward": 30
+    },
+    "definitions": {
+      "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+      "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+      "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+      "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+      "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+      "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+      "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+      "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+    }
+  },
+  "b1": {
+    "num_episodes": 30,
+    "privileged_access": true,
+    "metrics": {
+      "task_success_rate": 0.7,
+      "verified_fault_injection_rate": 1.0,
+      "failure_detection_rate": 1.0,
+      "recovery_success_rate": 0.6086956521739131,
+      "avg_retry_count": 1.391304347826087,
+      "recovery_latency_mean_steps": 43.43478260869565,
+      "recovery_latency_recovered_mean_steps": 71.35714285714286,
+      "mean_episode_length": 50.3,
+      "mean_cumulative_reward": 16.969112435959076,
+      "sum_cumulative_reward": 509.07337307877225,
+      "failure_category_counts": {
+        "motion_fail": 9
+      },
+      "fault_type_counts": {
+        "object_displacement": 18,
+        "grasp_perturb": 9
+      }
+    },
+    "numerators": {
+      "num_success": 21,
+      "num_injected": 27,
+      "num_injection_attempted": 27,
+      "num_detected": 23,
+      "num_real_failures": 23,
+      "num_recovered": 14,
+      "num_injected_failure_scenarios": 23,
+      "num_recovery_attempted": 23
+    },
+    "denominators": {
+      "task_success_rate": 30,
+      "verified_fault_injection_rate": 27,
+      "failure_detection_rate": 23,
+      "recovery_success_rate": 23,
+      "avg_retry_count": 23,
+      "recovery_latency_mean_steps": 23,
+      "mean_episode_length": 30,
+      "mean_cumulative_reward": 30
+    },
+    "definitions": {
+      "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+      "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+      "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+      "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+      "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+      "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+      "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+      "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+    }
+  },
+  "comparison": {
+    "privileged_access": true,
+    "matched_pairs": 30,
+    "b0_unmatched": 0,
+    "b1_unmatched": 0,
+    "b0": {
+      "num_episodes": 30,
+      "privileged_access": true,
+      "metrics": {
+        "task_success_rate": 0.23333333333333334,
+        "verified_fault_injection_rate": 1.0,
+        "failure_detection_rate": 0.0,
+        "recovery_success_rate": 0.0,
+        "avg_retry_count": null,
+        "recovery_latency_mean_steps": null,
+        "recovery_latency_recovered_mean_steps": null,
+        "mean_episode_length": 66.53333333333333,
+        "mean_cumulative_reward": 6.296199395396853,
+        "sum_cumulative_reward": 188.88598186190558,
+        "failure_category_counts": {
+          "motion_fail": 23
+        },
+        "fault_type_counts": {
+          "grasp_perturb": 9,
+          "object_displacement": 18
+        }
+      },
+      "numerators": {
+        "num_success": 7,
+        "num_injected": 27,
+        "num_injection_attempted": 27,
+        "num_detected": 0,
+        "num_real_failures": 23,
+        "num_recovered": 0,
+        "num_injected_failure_scenarios": 23,
+        "num_recovery_attempted": 0
+      },
+      "denominators": {
+        "task_success_rate": 30,
+        "verified_fault_injection_rate": 27,
+        "failure_detection_rate": 23,
+        "recovery_success_rate": 23,
+        "avg_retry_count": 0,
+        "recovery_latency_mean_steps": 0,
+        "mean_episode_length": 30,
+        "mean_cumulative_reward": 30
+      },
+      "definitions": {
+        "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+        "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+        "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+        "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+        "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+        "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+        "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+        "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+      }
+    },
+    "b1": {
+      "num_episodes": 30,
+      "privileged_access": true,
+      "metrics": {
+        "task_success_rate": 0.7,
+        "verified_fault_injection_rate": 1.0,
+        "failure_detection_rate": 1.0,
+        "recovery_success_rate": 0.6086956521739131,
+        "avg_retry_count": 1.391304347826087,
+        "recovery_latency_mean_steps": 43.43478260869565,
+        "recovery_latency_recovered_mean_steps": 71.35714285714286,
+        "mean_episode_length": 50.3,
+        "mean_cumulative_reward": 16.969112435959076,
+        "sum_cumulative_reward": 509.07337307877225,
+        "failure_category_counts": {
+          "motion_fail": 9
+        },
+        "fault_type_counts": {
+          "grasp_perturb": 9,
+          "object_displacement": 18
+        }
+      },
+      "numerators": {
+        "num_success": 21,
+        "num_injected": 27,
+        "num_injection_attempted": 27,
+        "num_detected": 23,
+        "num_real_failures": 23,
+        "num_recovered": 14,
+        "num_injected_failure_scenarios": 23,
+        "num_recovery_attempted": 23
+      },
+      "denominators": {
+        "task_success_rate": 30,
+        "verified_fault_injection_rate": 27,
+        "failure_detection_rate": 23,
+        "recovery_success_rate": 23,
+        "avg_retry_count": 23,
+        "recovery_latency_mean_steps": 23,
+        "mean_episode_length": 30,
+        "mean_cumulative_reward": 30
+      },
+      "definitions": {
+        "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+        "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+        "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+        "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+        "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+        "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+        "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+        "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+      }
+    },
+    "deltas": {
+      "task_success_rate": 0.4666666667,
+      "verified_fault_injection_rate": 0.0,
+      "failure_detection_rate": 1.0,
+      "recovery_success_rate": 0.6086956522,
+      "avg_retry_count": null,
+      "recovery_latency_mean_steps": null,
+      "mean_episode_length": -16.2333333333,
+      "mean_cumulative_reward": 10.6729130406
+    }
+  }
+}

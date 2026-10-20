@@ -1,0 +1,1048 @@
+sh: /home/shidi/miniconda3/lib/libtinfo.so.6: no version information available (required by sh)
+sh: /home/shidi/miniconda3/lib/libtinfo.so.6: no version information available (required by sh)
+[33;1m2026-10-20 22:51:35,913 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:51:41.194177+00:00", "message": "plan exhausted without success", "seed": 0, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507901.1941767, "truncated": false}
+[33;1m2026-10-20 22:51:41,407 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:51:46.383912+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507906.3839118, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:51:46.575096+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 83, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507906.5750961, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:51:46,782 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:51:51.842076+00:00", "message": "plan exhausted without success", "seed": 1, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507911.8420756, "truncated": false}
+[33;1m2026-10-20 22:51:52,041 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:51:56.971869+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507916.9718688, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:51:57.187787+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 77, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507917.1877866, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:51:57,406 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:02.324738+00:00", "message": "plan exhausted without success", "seed": 2, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 51, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507922.324738, "truncated": false}
+[33;1m2026-10-20 22:52:02,528 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:07.977338+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 51, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507927.9773383, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:52:08.163272+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 65, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507928.1632721, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:52:08,391 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:13.741166+00:00", "message": "plan exhausted without success", "seed": 3, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507933.7411659, "truncated": false}
+[33;1m2026-10-20 22:52:13,939 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:19.106395+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507939.1063955, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:52:19.335762+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 82, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507939.3357623, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:52:19,559 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:24.719753+00:00", "message": "plan exhausted without success", "seed": 4, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 75, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507944.7197526, "truncated": false}
+[33;1m2026-10-20 22:52:24,933 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:30.091542+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 75, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507950.091542, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:52:30.352853+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 97, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507950.3528528, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:52:30,547 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:35.795026+00:00", "message": "plan exhausted without success", "seed": 5, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 87, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507955.7950258, "truncated": false}
+[33;1m2026-10-20 22:52:35,984 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:41.122148+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 87, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507961.1221476, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:52:41.428624+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 108, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507961.4286237, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:52:41,632 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:46.408497+00:00", "message": "plan exhausted without success", "seed": 6, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 70, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507966.4084973, "truncated": false}
+[33;1m2026-10-20 22:52:46,589 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:50.476003+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 70, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507970.4760034, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:52:50.704314+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 83, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507970.704314, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:52:50,916 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:54.774689+00:00", "message": "plan exhausted without success", "seed": 7, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 73, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507974.7746887, "truncated": false}
+[33;1m2026-10-20 22:52:54,957 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:52:58.750892+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 73, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507978.750892, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:52:58.938634+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 80, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507978.9386344, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:52:59,125 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:53:02.844211+00:00", "message": "", "seed": 8, "skill_id": "pick_cube_mplib", "status": "success", "steps": 0, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792507982.8442106, "truncated": false}
+[33;1m2026-10-20 22:53:03,035 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:06.739798+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 0, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507986.7397983, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:06,935 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:10.827580+00:00", "message": "plan exhausted without success", "seed": 9, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507990.82758, "truncated": false}
+[33;1m2026-10-20 22:53:11,024 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:14.978328+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792507994.978328, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:15.195564+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 79, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792507995.1955643, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:15,416 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:19.212154+00:00", "message": "plan exhausted without success", "seed": 0, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792507999.2121537, "truncated": false}
+[33;1m2026-10-20 22:53:19,399 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:23.170997+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508003.1709967, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:23.382860+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 93, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508003.38286, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:23,563 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:53:27.442508+00:00", "message": "", "seed": 1, "skill_id": "pick_cube_mplib", "status": "success", "steps": 71, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792508007.4425085, "truncated": false}
+[33;1m2026-10-20 22:53:27,649 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:31.434209+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 71, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508011.4342089, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:31,629 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:35.457138+00:00", "message": "plan exhausted without success", "seed": 2, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 51, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508015.457138, "truncated": false}
+[33;1m2026-10-20 22:53:35,658 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:39.504897+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 51, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508019.5048969, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:39.758101+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 79, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508019.7581015, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:39,959 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:43.768461+00:00", "message": "plan exhausted without success", "seed": 3, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508023.7684615, "truncated": false}
+[33;1m2026-10-20 22:53:43,961 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:47.707275+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508027.707275, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:47.929566+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 97, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508027.9295661, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:48,096 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:51.862211+00:00", "message": "plan exhausted without success", "seed": 4, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 75, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508031.8622112, "truncated": false}
+[33;1m2026-10-20 22:53:52,040 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:53:55.854320+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 75, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508035.85432, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:53:56.137566+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 108, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508036.1375656, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:53:56,341 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:54:00.241271+00:00", "message": "", "seed": 5, "skill_id": "pick_cube_mplib", "status": "success", "steps": 81, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792508040.2412708, "truncated": false}
+[33;1m2026-10-20 22:54:00,428 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:54:04.305556+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 81, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508044.305556, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:54:04,494 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:54:08.367390+00:00", "message": "", "seed": 6, "skill_id": "pick_cube_mplib", "status": "success", "steps": 66, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792508048.3673897, "truncated": false}
+[33;1m2026-10-20 22:54:08,568 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:54:12.328875+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 66, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508052.328875, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:54:12,531 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:16.754353+00:00", "message": "plan exhausted without success", "seed": 7, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 73, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508056.7543526, "truncated": false}
+[33;1m2026-10-20 22:54:16,968 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:20.681985+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 73, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508060.6819851, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:54:20.882333+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 83, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508060.882333, "truncated": false}
+{"aborted": false, "attempts": 2, "decisions": ["retry"], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 1, "recovered": true, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:54:21,063 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:54:24.741456+00:00", "message": "", "seed": 8, "skill_id": "pick_cube_mplib", "status": "success", "steps": 0, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792508064.7414558, "truncated": false}
+[33;1m2026-10-20 22:54:24,952 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:54:28.632176+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 0, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508068.6321764, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:54:28,835 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:54:32.804428+00:00", "message": "", "seed": 9, "skill_id": "pick_cube_mplib", "status": "success", "steps": 77, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792508072.8044279, "truncated": false}
+[33;1m2026-10-20 22:54:32,997 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:54:36.780516+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 77, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508076.780516, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:54:36,957 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:40.752310+00:00", "message": "plan exhausted without success", "seed": 0, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508080.7523096, "truncated": false}
+[33;1m2026-10-20 22:54:40,935 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:44.770303+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508084.7703028, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:44.798930+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508084.7989304, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:44.826984+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508084.8269844, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:54:45,019 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:48.853208+00:00", "message": "plan exhausted without success", "seed": 1, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508088.8532078, "truncated": false}
+[33;1m2026-10-20 22:54:49,050 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:52.927364+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 74, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508092.9273636, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:52.977403+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508092.9774032, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:53.028629+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508093.0286286, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:54:53,220 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:54:57.371958+00:00", "message": "plan exhausted without success", "seed": 2, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 51, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508097.3719578, "truncated": false}
+[33;1m2026-10-20 22:54:57,564 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:01.375673+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 51, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508101.3756733, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:01.400034+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508101.4000337, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:01.423489+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508101.4234886, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:55:01,635 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:05.570746+00:00", "message": "plan exhausted without success", "seed": 3, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508105.5707462, "truncated": false}
+[33;1m2026-10-20 22:55:05,795 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:09.691461+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508109.6914606, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:10.046433+00:00", "message": "grasp 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508110.0464332, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:10.397436+00:00", "message": "grasp 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508110.3974357, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:55:10,631 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:14.457295+00:00", "message": "plan exhausted without success", "seed": 4, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 75, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508114.4572947, "truncated": false}
+[33;1m2026-10-20 22:55:14,701 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:18.515219+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 75, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508118.5152187, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:18.530767+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508118.5307674, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:18.545546+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508118.5455456, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:55:18,753 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:22.664016+00:00", "message": "plan exhausted without success", "seed": 5, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 87, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508122.6640158, "truncated": false}
+[33;1m2026-10-20 22:55:22,871 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:26.746375+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 87, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508126.7463748, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:26.767608+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508126.7676084, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:26.788043+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508126.7880435, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:55:26,973 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:30.807291+00:00", "message": "plan exhausted without success", "seed": 6, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 70, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508130.8072908, "truncated": false}
+[33;1m2026-10-20 22:55:31,018 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:34.840389+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 70, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508134.840389, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:34.867991+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508134.8679914, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:34.895000+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508134.8950002, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:55:35,098 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:38.981914+00:00", "message": "plan exhausted without success", "seed": 7, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 73, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508138.9819136, "truncated": false}
+[33;1m2026-10-20 22:55:39,183 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:43.003755+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 73, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508143.0037549, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:43.018676+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508143.018676, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:43.033084+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508143.0330837, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+[33;1m2026-10-20 22:55:43,249 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": true, "event": "skill_result", "failure_type": null, "iso": "2026-10-20T14:55:46.978717+00:00", "message": "", "seed": 8, "skill_id": "pick_cube_mplib", "status": "success", "steps": 0, "task_id": "PickCube-v1", "task_state": "success", "terminated": true, "timestamp": 1792508146.9787169, "truncated": false}
+[33;1m2026-10-20 22:55:47,149 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": true, "event": "skill_attempt", "failure_type": null, "iso": "2026-10-20T14:55:50.950197+00:00", "message": "", "skill_id": "pick_cube_mplib", "status": "success", "steps": 0, "task_id": "PickCube-v1", "terminated": true, "timestamp": 1792508150.9501967, "truncated": false}
+{"aborted": false, "attempts": 1, "decisions": [], "env_success": true, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "success", "num_decisions": 0, "recovered": false, "task_id": "PickCube-v1", "terminated": true, "truncated": false}
+[33;1m2026-10-20 22:55:51,147 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"env_success": false, "event": "skill_result", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:55.086497+00:00", "message": "plan exhausted without success", "seed": 9, "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "task_state": "failure", "terminated": false, "timestamp": 1792508155.0864968, "truncated": false}
+[33;1m2026-10-20 22:55:55,317 - mani_skill  - WARNING - The chosen render mode is "none", but selected rendering device "None" does not support rendering[0m
+{"attempt": 1, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 1, "env_success": false, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:59.291214+00:00", "message": "plan exhausted without success", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 84, "task_id": "PickCube-v1", "terminated": false, "timestamp": 1792508159.291214, "truncated": false}
+{"action": "retry", "attempt": 1, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 0, "task_id": "PickCube-v1"}
+{"attempt": 2, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 2, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:59.347692+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508159.3476915, "truncated": null}
+{"action": "retry", "attempt": 2, "detail": {"failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "retry skill within same episode", "retry_count": 1, "task_id": "PickCube-v1"}
+{"attempt": 3, "event": "skill_attempt_begin", "task_id": "PickCube-v1"}
+{"attempt": 3, "env_success": null, "event": "skill_attempt", "failure_type": "motion_fail", "iso": "2026-10-20T14:55:59.403203+00:00", "message": "reach 阶段运动规划失败", "skill_id": "pick_cube_mplib", "status": "failure", "steps": 0, "task_id": "PickCube-v1", "terminated": null, "timestamp": 1792508159.4032032, "truncated": null}
+{"action": "abort", "attempt": 3, "detail": {"exhausted": true, "failure_type": "motion_fail", "max_retries": 2}, "event": "recovery_decision", "failure_type": "motion_fail", "reason": "recovery exhausted (retry budget reached)", "retry_count": 2, "task_id": "PickCube-v1"}
+{"aborted": true, "attempts": 3, "decisions": ["retry", "retry", "abort"], "env_success": null, "event": "recovery_result", "final_skill_id": "pick_cube_mplib", "final_status": "failure", "num_decisions": 3, "recovered": false, "task_id": "PickCube-v1", "terminated": null, "truncated": null}
+{
+  "faults": [
+    "object_displacement",
+    "grasp_perturb",
+    "object_displacement_large"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "details": [
+    {
+      "fault": "object_displacement",
+      "seed": 0,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 83,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 1,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 77,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 2,
+      "b0": {
+        "success": false,
+        "steps": 51,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 65,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 3,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 82,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 4,
+      "b0": {
+        "success": false,
+        "steps": 75,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 97,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 5,
+      "b0": {
+        "success": false,
+        "steps": 87,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 108,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 6,
+      "b0": {
+        "success": false,
+        "steps": 70,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 83,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 7,
+      "b0": {
+        "success": false,
+        "steps": 73,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 80,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 8,
+      "b0": {
+        "success": true,
+        "steps": 0,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 0,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement",
+      "seed": 9,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 79,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 0,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 93,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 1,
+      "b0": {
+        "success": true,
+        "steps": 71,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 71,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 2,
+      "b0": {
+        "success": false,
+        "steps": 51,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 79,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 3,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 97,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 4,
+      "b0": {
+        "success": false,
+        "steps": 75,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 108,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 5,
+      "b0": {
+        "success": true,
+        "steps": 81,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 81,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 6,
+      "b0": {
+        "success": true,
+        "steps": 66,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 66,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 7,
+      "b0": {
+        "success": false,
+        "steps": 73,
+        "status": "failure"
+      },
+      "b1": {
+        "success": true,
+        "steps": 83,
+        "status": "success",
+        "attempts": 2,
+        "recovered": true,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 8,
+      "b0": {
+        "success": true,
+        "steps": 0,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 0,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "grasp_perturb",
+      "seed": 9,
+      "b0": {
+        "success": true,
+        "steps": 77,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 77,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 0,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 1,
+      "b0": {
+        "success": false,
+        "steps": 74,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 2,
+      "b0": {
+        "success": false,
+        "steps": 51,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 3,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 4,
+      "b0": {
+        "success": false,
+        "steps": 75,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 5,
+      "b0": {
+        "success": false,
+        "steps": 87,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 6,
+      "b0": {
+        "success": false,
+        "steps": 70,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 7,
+      "b0": {
+        "success": false,
+        "steps": 73,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 8,
+      "b0": {
+        "success": true,
+        "steps": 0,
+        "status": "success"
+      },
+      "b1": {
+        "success": true,
+        "steps": 0,
+        "status": "success",
+        "attempts": 1,
+        "recovered": false,
+        "aborted": false
+      }
+    },
+    {
+      "fault": "object_displacement_large",
+      "seed": 9,
+      "b0": {
+        "success": false,
+        "steps": 84,
+        "status": "failure"
+      },
+      "b1": {
+        "success": false,
+        "steps": 0,
+        "status": "failure",
+        "attempts": 3,
+        "recovered": false,
+        "aborted": true
+      }
+    }
+  ],
+  "b0": {
+    "num_episodes": 30,
+    "privileged_access": true,
+    "metrics": {
+      "task_success_rate": 0.23333333333333334,
+      "verified_fault_injection_rate": 1.0,
+      "failure_detection_rate": 0.0,
+      "recovery_success_rate": 0.0,
+      "avg_retry_count": null,
+      "recovery_latency_mean_steps": null,
+      "recovery_latency_recovered_mean_steps": null,
+      "mean_episode_length": 66.53333333333333,
+      "mean_cumulative_reward": 6.296199395396853,
+      "sum_cumulative_reward": 188.88598186190558,
+      "failure_category_counts": {
+        "motion_fail": 23
+      },
+      "fault_type_counts": {
+        "object_displacement": 18,
+        "grasp_perturb": 9
+      }
+    },
+    "numerators": {
+      "num_success": 7,
+      "num_injected": 27,
+      "num_injection_attempted": 27,
+      "num_detected": 0,
+      "num_real_failures": 23,
+      "num_recovered": 0,
+      "num_injected_failure_scenarios": 23,
+      "num_recovery_attempted": 0
+    },
+    "denominators": {
+      "task_success_rate": 30,
+      "verified_fault_injection_rate": 27,
+      "failure_detection_rate": 23,
+      "recovery_success_rate": 23,
+      "avg_retry_count": 0,
+      "recovery_latency_mean_steps": 0,
+      "mean_episode_length": 30,
+      "mean_cumulative_reward": 30
+    },
+    "definitions": {
+      "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+      "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+      "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+      "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+      "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+      "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+      "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+      "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+    }
+  },
+  "b1": {
+    "num_episodes": 30,
+    "privileged_access": true,
+    "metrics": {
+      "task_success_rate": 0.7,
+      "verified_fault_injection_rate": 1.0,
+      "failure_detection_rate": 1.0,
+      "recovery_success_rate": 0.6086956521739131,
+      "avg_retry_count": 1.391304347826087,
+      "recovery_latency_mean_steps": 43.43478260869565,
+      "recovery_latency_recovered_mean_steps": 71.35714285714286,
+      "mean_episode_length": 50.3,
+      "mean_cumulative_reward": 16.969112435959076,
+      "sum_cumulative_reward": 509.07337307877225,
+      "failure_category_counts": {
+        "motion_fail": 9
+      },
+      "fault_type_counts": {
+        "object_displacement": 18,
+        "grasp_perturb": 9
+      }
+    },
+    "numerators": {
+      "num_success": 21,
+      "num_injected": 27,
+      "num_injection_attempted": 27,
+      "num_detected": 23,
+      "num_real_failures": 23,
+      "num_recovered": 14,
+      "num_injected_failure_scenarios": 23,
+      "num_recovery_attempted": 23
+    },
+    "denominators": {
+      "task_success_rate": 30,
+      "verified_fault_injection_rate": 27,
+      "failure_detection_rate": 23,
+      "recovery_success_rate": 23,
+      "avg_retry_count": 23,
+      "recovery_latency_mean_steps": 23,
+      "mean_episode_length": 30,
+      "mean_cumulative_reward": 30
+    },
+    "definitions": {
+      "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+      "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+      "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+      "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+      "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+      "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+      "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+      "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+    }
+  },
+  "comparison": {
+    "privileged_access": true,
+    "matched_pairs": 30,
+    "b0_unmatched": 0,
+    "b1_unmatched": 0,
+    "b0": {
+      "num_episodes": 30,
+      "privileged_access": true,
+      "metrics": {
+        "task_success_rate": 0.23333333333333334,
+        "verified_fault_injection_rate": 1.0,
+        "failure_detection_rate": 0.0,
+        "recovery_success_rate": 0.0,
+        "avg_retry_count": null,
+        "recovery_latency_mean_steps": null,
+        "recovery_latency_recovered_mean_steps": null,
+        "mean_episode_length": 66.53333333333333,
+        "mean_cumulative_reward": 6.296199395396853,
+        "sum_cumulative_reward": 188.88598186190558,
+        "failure_category_counts": {
+          "motion_fail": 23
+        },
+        "fault_type_counts": {
+          "grasp_perturb": 9,
+          "object_displacement": 18
+        }
+      },
+      "numerators": {
+        "num_success": 7,
+        "num_injected": 27,
+        "num_injection_attempted": 27,
+        "num_detected": 0,
+        "num_real_failures": 23,
+        "num_recovered": 0,
+        "num_injected_failure_scenarios": 23,
+        "num_recovery_attempted": 0
+      },
+      "denominators": {
+        "task_success_rate": 30,
+        "verified_fault_injection_rate": 27,
+        "failure_detection_rate": 23,
+        "recovery_success_rate": 23,
+        "avg_retry_count": 0,
+        "recovery_latency_mean_steps": 0,
+        "mean_episode_length": 30,
+        "mean_cumulative_reward": 30
+      },
+      "definitions": {
+        "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+        "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+        "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+        "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+        "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+        "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+        "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+        "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+      }
+    },
+    "b1": {
+      "num_episodes": 30,
+      "privileged_access": true,
+      "metrics": {
+        "task_success_rate": 0.7,
+        "verified_fault_injection_rate": 1.0,
+        "failure_detection_rate": 1.0,
+        "recovery_success_rate": 0.6086956521739131,
+        "avg_retry_count": 1.391304347826087,
+        "recovery_latency_mean_steps": 43.43478260869565,
+        "recovery_latency_recovered_mean_steps": 71.35714285714286,
+        "mean_episode_length": 50.3,
+        "mean_cumulative_reward": 16.969112435959076,
+        "sum_cumulative_reward": 509.07337307877225,
+        "failure_category_counts": {
+          "motion_fail": 9
+        },
+        "fault_type_counts": {
+          "grasp_perturb": 9,
+          "object_displacement": 18
+        }
+      },
+      "numerators": {
+        "num_success": 21,
+        "num_injected": 27,
+        "num_injection_attempted": 27,
+        "num_detected": 23,
+        "num_real_failures": 23,
+        "num_recovered": 14,
+        "num_injected_failure_scenarios": 23,
+        "num_recovery_attempted": 23
+      },
+      "denominators": {
+        "task_success_rate": 30,
+        "verified_fault_injection_rate": 27,
+        "failure_detection_rate": 23,
+        "recovery_success_rate": 23,
+        "avg_retry_count": 23,
+        "recovery_latency_mean_steps": 23,
+        "mean_episode_length": 30,
+        "mean_cumulative_reward": 30
+      },
+      "definitions": {
+        "task_success_rate": "num_success / num_episodes (分母=该组总 episode 数)",
+        "verified_fault_injection_rate": "num_injected / num_injection_attempted (分母=尝试注入的 episode 数, 即带 FaultRecord 的 episode; 分子=injected=True)",
+        "failure_detection_rate": "num_detected / num_real_failures (分母=真实发生失败的场景数: injected=True 且 failure_manifested; 分子=其中被检测到的)",
+        "recovery_success_rate": "num_recovered / num_injected_failure_scenarios (分母=实际注入成功的失败场景数: injected=True 且 failure_manifested; 分子=recovered=True)",
+        "avg_retry_count": "sum(attempts-1) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; retry = attempts-1, 首次尝试不算 retry)",
+        "recovery_latency_mean_steps": "sum(episode.steps - first_failure_or_inject_step) / num_recovery_attempted (分母=实际发生恢复尝试的 episode 数; latency=从首个失败/注入步到 episode 结束的步数)",
+        "mean_episode_length": "sum(steps) / num_episodes (分母=该组总 episode 数)",
+        "mean_cumulative_reward": "sum(reward) / num_episodes (分母=该组总 episode 数)"
+      }
+    },
+    "deltas": {
+      "task_success_rate": 0.4666666667,
+      "verified_fault_injection_rate": 0.0,
+      "failure_detection_rate": 1.0,
+      "recovery_success_rate": 0.6086956522,
+      "avg_retry_count": null,
+      "recovery_latency_mean_steps": null,
+      "mean_episode_length": -16.2333333333,
+      "mean_cumulative_reward": 10.6729130406
+    }
+  }
+}
+
+[report saved] logs/m3c_benchmark.json
