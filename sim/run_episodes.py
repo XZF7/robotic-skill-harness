@@ -40,7 +40,7 @@ def run_one_episode(adapter: PickCubeAdapter, seed: int) -> EpisodeResult:
         if res.episode.terminated or res.episode.truncated:
             break
 
-    skill_result = skill.finalize(obs)
+    skill_result = skill.result(obs)
     success = bool(obs.truth.success)
     return EpisodeResult(
         task_id="PickCube-v1",
@@ -51,7 +51,7 @@ def run_one_episode(adapter: PickCubeAdapter, seed: int) -> EpisodeResult:
         failures=[skill_result.failure] if skill_result.failure else [],
         metrics={
             "seed": seed,
-            "terminated": bool(skill.status is SkillStatus.SUCCESS),
+            "terminated": bool(skill_result.status is SkillStatus.SUCCESS),
             "skill_status": skill_result.status.value,
             "is_grasped": bool(obs.truth.is_grasped),
         },

@@ -120,11 +120,17 @@ class TestSkillEndToEnd:
                     terminated = res.episode.terminated
                     break
 
-            result = skill.finalize(obs)
+            result = skill.result(obs)
             assert obs.truth.success is True
             assert terminated is True              # 成功触发 terminated
             assert result.status is SkillStatus.SUCCESS
             assert skill.is_done is True
+            # 幂等: 多次调用返回一致结果; status 只可能是 SUCCESS/FAILURE
+            result2 = skill.result(obs)
+            assert result2.status is SkillStatus.SUCCESS
+            assert result2.steps == result.steps
+            assert result2.skill_id == result.skill_id
+            assert result.status in (SkillStatus.SUCCESS, SkillStatus.FAILURE)
         finally:
             a.close()
 
