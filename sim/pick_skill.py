@@ -12,7 +12,8 @@ from typing import List, Optional
 import numpy as np
 import sapien
 
-from mani_skill.examples.motionplanning.panda.motionplanner import     PandaArmMotionPlanningSolver
+from mani_skill.examples.motionplanning.panda.motionplanner import \
+    PandaArmMotionPlanningSolver
 from mani_skill.examples.motionplanning.base_motionplanner.utils import (
     compute_grasp_info_by_obb,
     get_actor_obb,
@@ -181,26 +182,6 @@ class PickCubeSkill(RobotSkill):
     def is_done(self) -> bool:
         return self._done
 
-    def finalize(self, obs: RobotObservation) -> SkillResult:
-        """episode 结束时由驱动循环调用，依据最终观测确定技能结果。
-
-        (若 env 因 success 触发 terminated，循环会在下一次 act 前 break，
-         故需在此依据最终观测补定 status。)
-        """
-        if self._status is None:
-            if obs.truth.success:
-                self._status = SkillStatus.SUCCESS
-            else:
-                self._status = SkillStatus.FAILURE
-                self._failure = FailureEvent(
-                    type=FailureType.MOTION_FAIL,
-                    step=self._steps,
-                    timestamp=obs.timestamp,
-                    detail={"error": "episode ended without success"},
-                )
-            self._done = True
-        return self.result()
-
     # ------------------------------------------------------------------ #
     # 结果
     # ------------------------------------------------------------------ #
@@ -208,15 +189,34 @@ class PickCubeSkill(RobotSkill):
     def status(self) -> Optional[SkillStatus]:
         return self._status
 
-    def result(self) -> SkillResult:
-        status = self._status
-        if status is None:
-            status = SkillStatus.TIMEOUT
+    def result(self, final_obs: Optional[RobotObservation] = None) -> SkillResult:
+        """返回技能的权威执行结果 (幂等: 多次调用返回一致结果, 无仿真副作用)。
+
+        status 已定 (reset/act 自报 SUCCESS/FAILURE) 时直接返回；若仍为 None
+        (executor 因 env 终止/截断提前结束, is_done 仍为 False)，依据
+        final_obs.truth 补定: success -> SUCCESS，否则 FAILURE (补定后缓存保证幂等)。
+        返回值 status 只能是 SUCCESS 或 FAILURE。
+        """
+        if self._status is None:
+            if final_obs is not None and final_obs.truth.success:
+                self._status = SkillStatus.SUCCESS
+            else:
+                self._status = SkillStatus.FAILURE
+                if self._failure is None:
+                    self._failure = FailureEvent(
+                        type=FailureType.MOTION_FAIL,
+                        step=self._steps,
+                        timestamp=final_obs.timestamp if final_obs is not None else 0.0,
+                        detail={"error": "episode ended without success"},
+                    )
+            self._done = True
         return SkillResult(
-            status=status,
+            status=self._status,
             skill_id=self.skill_id,
             steps=self._steps,
-            message=("" if status is SkillStatus.SUCCESS
-                     else (self._failure.detail.get("error", "") if self._failure else "")),
+            message=(
+                "" if self._status is SkillStatus.SUCCESS
+                else (self._failure.detail.get("error", "") if self._failure else "")
+            ),
             failure=self._failure,
         )
