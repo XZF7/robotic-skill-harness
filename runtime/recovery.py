@@ -40,7 +40,7 @@ from .errors import InvalidTransitionError
 from .executor import SkillExecutor
 from .failure_detector import FailureDetector
 from .logger import ExecutionLogger, make_record
-from .predictive import PredictiveGuard, RecoveryMode
+from .predictive import PredictiveGuard, RecoveryMode, TemporalGateConfig
 from .registry import SkillRegistry
 
 
@@ -297,6 +297,7 @@ class RecoveryRunner:
         recovery_mode: str = "b1",
         predictor_threshold: Optional[float] = None,
         predictor_min_confidence: float = 0.0,
+        temporal_gate: Optional[TemporalGateConfig] = None,
     ) -> None:
         self.task_id = task_id
         self.recording = RecordingAdapter(adapter)
@@ -326,12 +327,21 @@ class RecoveryRunner:
             )
         self.predictor = predictor
         self.guard: Optional[PredictiveGuard] = None
-        if predictor is not None and self.recovery_mode is RecoveryMode.B2_PREDICTIVE:
+        if predictor is not None and self.recovery_mode in (
+            RecoveryMode.B2_PREDICTIVE,
+            RecoveryMode.B2T_TEMPORAL,
+        ):
+            gate_cfg = (
+                temporal_gate
+                if self.recovery_mode is RecoveryMode.B2T_TEMPORAL
+                else None
+            )
             self.guard = PredictiveGuard(
                 predictor,
-                mode=RecoveryMode.B2_PREDICTIVE,
+                mode=self.recovery_mode,
                 threshold=predictor_threshold,
                 min_confidence=predictor_min_confidence,
+                gate=gate_cfg,
             )
 
     def run(
@@ -478,6 +488,7 @@ class RecoveryRunner:
                 "prediction": p.prediction,
                 "triggered": p.triggered,
                 "threshold": p.threshold,
+                "gate_reason": p.gate_reason,
                 "error": p.error,
             })
 
@@ -502,8 +513,10 @@ class RecoveryRunner:
             recs = self.guard.records
             predictive = {
                 "mode": self.recovery_mode.value,
+                "gate_mode": self.guard.gate.mode.value,
                 "num_predictions": len(recs),
                 "num_triggers": sum(1 for r in recs if r.triggered),
+                "num_gated": sum(1 for r in recs if r.gate_reason is not None),
                 "num_fallbacks": sum(1 for r in recs if r.error is not None),
             }
         else:
