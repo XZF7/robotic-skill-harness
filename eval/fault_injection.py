@@ -39,7 +39,8 @@ DETECTED_KEY = "detected"
 _B0 = "b0"
 _B1 = "b1"
 _B2 = "b2"
-VALID_BASELINES = (_B0, _B1, _B2)
+_B2T = "b2t"
+VALID_BASELINES = (_B0, _B1, _B2, _B2T)
 
 
 def attach_fault(ep: EpisodeResult, fault: FaultRecord) -> EpisodeResult:

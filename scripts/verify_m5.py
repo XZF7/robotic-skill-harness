@@ -35,7 +35,7 @@ from sim import PickCubeAdapter, PickCubeSkill
 from sim.fault_injection import (
     FaultInjector, FAULT_OBJECT_DISPLACEMENT, FAULT_GRASP_PERTURB,
 )
-from runtime import TaskRunner, RecoveryRunner, SkillExecutor
+from runtime import TaskRunner, RecoveryRunner, SkillExecutor, FROZEN_B2T_GATE
 from runtime.recovery import RecoveryManager
 from learning.model import MLP, MLPFailurePredictor
 from eval import (
@@ -274,6 +274,39 @@ def run_b2(seed, ftype, fstep, fparams, fdur, predictor, threshold):
             first_fail_step = int(_sr.failure.step)
             break
     ep = _make_episode(seed, "b2", injector.records, r.recovery, sr,
+                       r.episode, executor.episode_reward)
+    records = runner.guard.records if runner.guard else []
+    triggers = [rec for rec in records if rec.triggered]
+    meta = {
+        "max_step_seen": fadapter.max_step_seen,
+        "num_predictions": len(records),
+        "num_triggers": len(triggers),
+        "first_trigger_step": int(triggers[0].step) if triggers else None,
+        "first_failure_step": first_fail_step,
+    }
+    return ep, meta
+
+
+def run_b2t(seed, ftype, fstep, fparams, fdur, predictor, threshold):
+    adapter, injector, fadapter = _mk(seed, ftype, fstep, fparams, fdur)
+    skill = PickCubeSkill(fadapter)
+    executor = AccumulatingExecutor()
+    manager = RecoveryManager(max_retries=2)
+    runner = RecoveryRunner(fadapter, skill, task_id="PickCube-v1",
+                            executor=executor, manager=manager, recovery_mode="b2t",
+                            predictor=predictor, predictor_threshold=threshold,
+                            temporal_gate=FROZEN_B2T_GATE)
+    try:
+        r = runner.run(seed=seed, max_steps=300)
+    finally:
+        runner.close()
+    sr = r.recovery.final_skill_result
+    first_fail_step = None
+    for _sr in r.attempt_results:
+        if _sr.failure is not None:
+            first_fail_step = int(_sr.failure.step)
+            break
+    ep = _make_episode(seed, "b2t", injector.records, r.recovery, sr,
                        r.episode, executor.episode_reward)
     records = runner.guard.records if runner.guard else []
     triggers = [rec for rec in records if rec.triggered]
@@ -682,6 +715,9 @@ def run_all(faults, seeds, methods, predictor, threshold, tag, out_dir, n_boot, 
                         elif method == "b2":
                             ep, meta = run_b2(seed, ftype, fstep, fparams, fdur,
                                               predictor, threshold)
+                        elif method == "b2t":
+                            ep, meta = run_b2t(seed, ftype, fstep, fparams, fdur,
+                                               predictor, threshold)
                         else:
                             raise ValueError(f"unknown method {method!r}")
                         wc = time.perf_counter() - tic
