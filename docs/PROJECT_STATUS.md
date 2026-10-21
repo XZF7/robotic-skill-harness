@@ -161,3 +161,36 @@ B0/B1/B2 matched 对比（3 故障 × 10 种子，threshold=0.5）：
 - 数据 seed 跨 fault_type 复用，需 episode 重映射唯一 seed（已由 C 实现并文档化）。
 - val 集过小（17 episode），阈值调优不可靠，threshold=0.5 为稳健默认。
 - B2 的 num_real_failures(27) > B1(23)：预判中止本身制造失败，佐证其有害。
+
+
+## Milestone 5 — 稳健基准、时序决策分析与可复现性 ✅（已验证，核心为诚实负面结果）
+
+### M5-0 冻结（Lead）
+
+`docs/BENCHMARK_PROTOCOL.md`（冻结协议）：held-out 种子 100–129（30，避开训练 0–29）、验证 40–59、eligibility 四层、主/次指标 + Wilson CI + paired bootstrap。
+
+### M5-A 故障/仿真审计（Agent A，`docs/fault_audit_m5.md`）
+
+只读审计通过：注入可复现（同 seed 逐位一致）、injected 靠读回物理状态、同 episode 恢复（仅 1 次 adapter.reset）、特权访问清单（PickCubeSkill 读 cube.pose/goal/truth.success；检测/特征/守卫只读 obs.policy）、B0/B1/B2 信息等价。发现 gripper_drop injected 语义弱（已修复：`bool(fell)` + never_grasped）。
+
+### M5-B 时序门控消融（Agent B）
+
+4 变体（debounce K=3/5 / phase / cooldown / advisory-only），验证种子 40–44 选参，冻结 phase 门控 `FROZEN_B2T_GATE`。19 测试。
+
+### M5-D 扩展基准（Agent D，`scripts/verify_m5.py`）
+
+held-out 100–129 × 3 故障 × 270 episode，eligibility 四层 + 全指标 + Wilson CI + paired bootstrap + 原始 CSV/JSON + 图。发现 mplib GIL 崩溃（分块规避）。
+
+### M5 主结果（3 故障 × 30 种子）
+
+| 指标 | B0 | B1 | B2 | B2-T |
+|---|---|---|---|---|
+| task_success | 25.6% | 65.6% | 17.8% | 20.0% |
+| recovery_success | 0% | 53.7% | 11.9% | 13.3% |
+| abort_rate | 0% | 34.4% | 82.2% | 80.0% |
+
+paired diff（bootstrap）: B1−B0 +0.400 CI[0.30,0.51] 显著；B2−B1 −0.478 CI[−0.58,−0.38] 显著劣；B2−B0 −0.078 CI[−0.19,0.02] 不显著；B2T−B2 +0.022 CI[0.00,0.06] 不显著。
+
+**核心结论（诚实负面结果）**: 学习预判（B2）端到端显著劣于规则恢复（B1），时序门控（B2-T）无法修复。根因：proprioception-only 观测空间无法在抓空发生前区分成功/失败（失败仅闭合后可观测），帧级假阳（12%）放大成 attempt 级中止（每集 ~1.84 次触发），耗尽 max_retries。B1 事后检测+重规划已近最优。不推广为"学习式天生无效"——引入视觉观测可能改变结论（超范围）。
+
+详见 `docs/M5_RESULTS.md`。
