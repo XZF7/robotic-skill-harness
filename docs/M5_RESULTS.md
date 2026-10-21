@@ -85,7 +85,7 @@ Agent B 实现 4 变体（debounce K=3/5、phase-aware gating、cooldown、advis
 - 脚本: `scripts/verify_m5.py`（B0/B1/B2/B2-T 基准）、`scripts/compare_b2t.py`（B2 vs B2-T 消融）。
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0   # 0 为示例
 # 主基准 (分块规避 mplib GIL, 断点续跑):
 for start in 100 105 110 115 120 125; do python scripts/verify_m5.py --tag primary   --seeds $(seq $start $((start+4))) --faults object_displacement grasp_perturb object_displacement_large; done
 # B2-T 消融:

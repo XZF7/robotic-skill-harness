@@ -14,7 +14,7 @@ PyTorch MLP 失败预测器: 22 维 proprioception 状态特征 -> 单帧失败�
 
 ```bash
 source scripts/activate_env.sh
-export CUDA_VISIBLE_DEVICES=0      # CPU 训练, 不占 GPU
+export CUDA_VISIBLE_DEVICES=0      # 示例值；CPU 训练不占 GPU
 python3 learning/train.py --seed 0 --epochs 200
 python3 learning/evaluate.py --json data/m4/checkpoints/results.json
 ```

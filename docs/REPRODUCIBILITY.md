@@ -9,7 +9,7 @@ Robotic Skill Harness（ManiSkill3 + Franka Panda）演示与基准的复现步�
 |---|---|
 | OS | Linux（本项目在 `5.15.0-131-generic` 上验证） |
 | Python | 3.10（验证版本 3.10.22） |
-| 加速 | **CPU-only headless**，不占 GPU；`export CUDA_VISIBLE_DEVICES=0`（任一单一卡号，非空即可；仿真实际走 CPU） |
+| 加速 | **CPU-only headless**，不占 GPU；`export CUDA_VISIBLE_DEVICES=0`（`0` 仅为示例值，须非空，否则 SAPIEN 段错误；仿真实际走 CPU） |
 | 显示 | 无需（`render_mode="none"` / `render_backend="none"`） |
 
 依赖版本（冻结，与 `docs/BENCHMARK_PROTOCOL.md` 一致）：
@@ -25,6 +25,10 @@ Robotic Skill Harness（ManiSkill3 + Franka Panda）演示与基准的复现步�
 
 > 环境由 `scripts/activate_env.sh` 激活，脚本内已处理一个已知的
 > `libnvJitLink` 符号遮蔽问题（把 torch 自带 nvjitlink 库前置到 `LD_LIBRARY_PATH`）。
+>
+> **GPU 选择说明**：`CUDA_VISIBLE_DEVICES=0` 仅为示例，请选择你环境中可访问的 GPU id。
+> CUDA 设备选择（`CUDA_VISIBLE_DEVICES`）与 SAPIEN 渲染所用的 Vulkan 设备选择可能不一致；
+> 本项目仿真/基准为 CPU-only，若需 GPU 渲染视频须另行验证（见 `docs/DEMO_GUIDE.md` §4）。
 
 ## 2. 环境激活（无硬编码路径）
 

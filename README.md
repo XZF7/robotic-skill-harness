@@ -71,9 +71,15 @@ source scripts/activate_env.sh   # sets PATH + fixes the nvjitlink LD_LIBRARY_PA
 ## Quick start (smoke test, ~20 s, 2 episodes)
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
+source scripts/activate_env.sh
+export CUDA_VISIBLE_DEVICES=0    # 示例: 换成可访问的 GPU id（须非空，否则 SAPIEN 段错误）
 python scripts/smoke_test.py        # expects "SMOKE PASS", exit 0
 ```
+
+> `CUDA_VISIBLE_DEVICES=0` 仅为**示例**，不是通用值——请换成你环境中可访问的 GPU id。
+> 注意 CUDA 设备选择（`CUDA_VISIBLE_DEVICES`）与 SAPIEN 渲染所用的 Vulkan 设备选择可能不一致；
+> 本项目仿真/基准均为 CPU-only（`sim_backend="cpu"`、`render_backend="none"`）不占 GPU，
+> 若需 GPU 渲染视频须单独验证（见 [`docs/DEMO_GUIDE.md`](docs/DEMO_GUIDE.md) §4）。
 
 ## Benchmark reproduction
 
