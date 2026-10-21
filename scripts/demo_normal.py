@@ -4,7 +4,7 @@
 PickCubeSkill + TaskRunner，无故障注入。逐步骤打印观测状态，最后 SUCCESS。
 
 运行:
-    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
     python scripts/demo_normal.py
 
 退出码 0 表示演示正常结束。

@@ -13,8 +13,8 @@ M5 目标不是让学习模型超越规则基线，而是严谨评估现有系�
 ## 2. 环境 (冻结)
 
 - python 3.10.22；torch 2.5.1+cu124；mani_skill 3.0.1；sapien 3.0.3；numpy 1.26.4；mplib 0.1.1；gymnasium 1.4.0。
-- CPU-only headless，`CUDA_VISIBLE_DEVICES=2`（不占 GPU）。conda env `maniskill`。
-- 复现命令: `source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2`。
+- CPU-only headless，`CUDA_VISIBLE_DEVICES=0`（不占 GPU）。conda env `maniskill`。
+- 复现命令: `source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0`。
 
 ## 3. 被测系统
 
@@ -79,7 +79,7 @@ gripper_drop (持续故障) 保持隔离，不纳入主 benchmark (固定步调�
 ## 9. 复现命令 (最终实验后补全)
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 python scripts/verify_m5.py --faults object_displacement grasp_perturb object_displacement_large \
     --seeds $(seq 100 129) --methods b0 b1 b2 --out logs/m5_primary.json
 # B2-T 消融 (验证种子 40-59 选参, held-out 100-129 冻结评估)

@@ -6,7 +6,7 @@ PickCubeSkill + RecoveryRunner (B1 规则恢复)。在第 10 步把 cube 位移 
 第二次尝试成功。演示「检测 -> 决策 -> 恢复」三阶段。
 
 运行:
-    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
     python scripts/demo_recovery.py
 
 退出码 0 表示演示正常结束。

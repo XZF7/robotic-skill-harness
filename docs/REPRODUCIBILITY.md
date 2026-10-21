@@ -9,7 +9,7 @@ Robotic Skill Harness（ManiSkill3 + Franka Panda）演示与基准的复现步�
 |---|---|
 | OS | Linux（本项目在 `5.15.0-131-generic` 上验证） |
 | Python | 3.10（验证版本 3.10.22） |
-| 加速 | **CPU-only headless**，不占 GPU；`export CUDA_VISIBLE_DEVICES=2`（仅占位，实际走 CPU） |
+| 加速 | **CPU-only headless**，不占 GPU；`export CUDA_VISIBLE_DEVICES=0`（任一单一卡号，非空即可；仿真实际走 CPU） |
 | 显示 | 无需（`render_mode="none"` / `render_backend="none"`） |
 
 依赖版本（冻结，与 `docs/BENCHMARK_PROTOCOL.md` 一致）：
@@ -26,25 +26,23 @@ Robotic Skill Harness（ManiSkill3 + Franka Panda）演示与基准的复现步�
 > 环境由 `scripts/activate_env.sh` 激活，脚本内已处理一个已知的
 > `libnvJitLink` 符号遮蔽问题（把 torch 自带 nvjitlink 库前置到 `LD_LIBRARY_PATH`）。
 
-## 2. 机器特定路径（参数化，勿硬编码）
+## 2. 环境激活（无硬编码路径）
 
-本仓库不硬编码任何绝对路径。机器相关路径一律通过环境变量注入：
-
-```bash
-export RSH_ENV=/path/to/conda/envs/maniskill      # conda env 根目录（含 bin/python）
-export RSH_ROOT=/path/to/robotic-skill-harness     # 仓库根目录
-```
-
-`scripts/activate_env.sh` 目前为开发机便利硬编码了 env 路径；在其他机器复现时，
-建议用上面的环境变量改写为：
+本仓库不硬编码任何绝对路径。激活环境统一用 `scripts/activate_env.sh`，它从以下两处取值
+（优先前者），两者都未提供时**报错并给出提示**，不会静默回退到机器特定路径：
 
 ```bash
-# 等价的最小激活（参数化版本）
-export PATH="$RSH_ENV/bin:$PATH"
-export LD_LIBRARY_PATH="$RSH_ENV/lib/python3.10/site-packages/nvidia/nvjitlink/lib:${LD_LIBRARY_PATH}"
+# 方式 1: 显式指定环境（推荐，最可复现）
+export MANISKILL_ENV=/path/to/conda/envs/maniskill   # conda env 根目录（含 bin/python）
+source scripts/activate_env.sh
+
+# 方式 2: 先 conda activate 一个兼容环境，脚本自动取 $CONDA_PREFIX
+conda activate maniskill
+source scripts/activate_env.sh
 ```
 
-> 注意：`LD_LIBRARY_PATH` 修正只对带 NVIDIA 库的 torch 环境必要；纯 CPU 安装可跳过。
+脚本会校验 `$ENV/bin/python` 存在、打印实际 Python 版本（期望 3.10），并按需前置
+torch 自带的 nvjitlink 库。> 注意：`LD_LIBRARY_PATH` 修正只对带 NVIDIA 库的 torch 环境必要；纯 CPU 安装可跳过。
 
 ## 3. 安装依赖（新机器一次性）
 
@@ -62,7 +60,7 @@ pip install "mani_skill==3.0.1" "sapien==3.0.3" "mplib==0.1.1" \
 **成本**：1 故障 × 1 种子 × B0/B1 = 2 个 episode，约 20 秒，CPU-only。
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 python scripts/smoke_test.py
 ```
 
@@ -97,7 +95,7 @@ python scripts/demo_abort.py      # object_displacement_large 0.5m -> 重试耗�
 复现命令与协议见 `docs/BENCHMARK_PROTOCOL.md` §9（冻结 commit `b67937d`，tag `v0.4.0`）：
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 python scripts/verify_m5.py --faults object_displacement grasp_perturb object_displacement_large \
     --seeds $(seq 100 129) --methods b0 b1 b2 --out logs/m5_primary.json
 ```

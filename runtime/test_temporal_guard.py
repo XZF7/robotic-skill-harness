@@ -9,7 +9,7 @@
 6. 记录语义: prediction (模型正预测) 与 triggered (实际中断) 分离, gate_reason 可追溯。
 
 用法 (仓库根目录, CPU-only):
-  source scripts/activate_env.sh; export CUDA_VISIBLE_DEVICES=2
+  source scripts/activate_env.sh; export CUDA_VISIBLE_DEVICES=0
   python3 -m pytest runtime/test_temporal_guard.py -v
 """
 from __future__ import annotations

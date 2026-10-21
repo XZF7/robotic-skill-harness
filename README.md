@@ -71,7 +71,7 @@ source scripts/activate_env.sh   # sets PATH + fixes the nvjitlink LD_LIBRARY_PA
 ## Quick start (smoke test, ~20 s, 2 episodes)
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 python scripts/smoke_test.py        # expects "SMOKE PASS", exit 0
 ```
 

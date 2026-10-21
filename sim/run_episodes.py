@@ -2,7 +2,7 @@
 
 用法:
     source scripts/activate_env.sh
-    export CUDA_VISIBLE_DEVICES=2   # 不能为空字符串 (SAPIEN 会段错误)；单一空闲卡即可
+    export CUDA_VISIBLE_DEVICES=0   # 不能为空字符串 (SAPIEN 会段错误)；单一空闲卡即可
     python -m sim.run_episodes --num-episodes 5 --seeds 0 1 2 3 4
 
 环境前置条件 (2026-10-20 已验证):

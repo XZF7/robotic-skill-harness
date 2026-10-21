@@ -5,7 +5,7 @@
 指标: task_success / recovery(attempts) / num_triggers / false-trigger (对比 b1 首试成功)。
 
 用法 (仓库根目录, CPU-only):
-  source scripts/activate_env.sh; export CUDA_VISIBLE_DEVICES=2
+  source scripts/activate_env.sh; export CUDA_VISIBLE_DEVICES=0
   python3 runtime/verify_temporal_guard.py --faults object_displacement --seeds 40 41 42 43 44 \
       --out logs/m5_temporal_guard.json
 """

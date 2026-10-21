@@ -6,7 +6,7 @@ Agent A (M6) 交付的 3 个演示脚本，覆盖「正常执行 / 可恢复失�
 ## 0. 前置
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 ```
 
 三个脚本都自包含（只依赖 `interfaces` / `sim` / `runtime` 三个包），固定 `seed=0`，退出码 0 表示演示正常结束。

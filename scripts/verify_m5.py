@@ -55,7 +55,6 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 _REPO = os.path.dirname(_HERE)
 _DEFAULT_CKPTS = [
     os.path.join(_REPO, "data", "m4", "checkpoints", "model.pt"),
-    "/data02/xzf/robotic-skill-harness/data/m4/checkpoints/model.pt",
 ]
 
 PREDICTOR_THRESHOLD = 0.5  # 冻结协议: B2 threshold=0.5

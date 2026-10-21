@@ -12,7 +12,7 @@
 3. 真实 checkpoint 预测器 (从 data/m4/checkpoints 重建) + 真实 PickCube 集成。
 
 用法 (仓库根目录, CPU-only):
-  source scripts/activate_env.sh; export CUDA_VISIBLE_DEVICES=2
+  source scripts/activate_env.sh; export CUDA_VISIBLE_DEVICES=0
   python3 -m pytest runtime/test_predictor_integration.py -v
 """
 from __future__ import annotations

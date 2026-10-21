@@ -16,7 +16,7 @@
 ## 2. Verified commands & test results（本轮实际执行）
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 python scripts/smoke_test.py                       # -> SMOKE PASS, exit 0 (~20s)
 python -m pytest tests/ runtime/ eval/ -q          # -> 270 passed
 python -m sim.test_faults                          # -> 5/5 tests passed

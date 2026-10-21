@@ -2,7 +2,7 @@
 
 运行 (CPU-only):
     source scripts/activate_env.sh
-    export CUDA_VISIBLE_DEVICES=2
+    export CUDA_VISIBLE_DEVICES=0
     python -m sim.test_faults            # 自包含 runner
     # 或
     pytest -q sim/test_faults.py         # 若环境有 pytest

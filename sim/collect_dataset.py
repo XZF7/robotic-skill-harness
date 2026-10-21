@@ -14,7 +14,7 @@
 
 用法:
     source scripts/activate_env.sh
-    export CUDA_VISIBLE_DEVICES=2       # 不能为空字符串 (SAPIEN 段错误)
+    export CUDA_VISIBLE_DEVICES=0       # 不能为空字符串 (SAPIEN 段错误)
     python -m sim.collect_dataset --pilot            # ~20 episode pilot
     python -m sim.collect_dataset --full             # ~150 episode 全量
     python -m sim.collect_dataset --verify-only      # 只校验已保存数据集

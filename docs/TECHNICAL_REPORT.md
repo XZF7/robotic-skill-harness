@@ -227,7 +227,7 @@ These are coincidentally equal and are **different things**: one is unit/integra
 ### 8.6 Reproducibility
 
 ```bash
-source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
 # primary benchmark (chunked to avoid an mplib GIL crash ~90 eps/process):
 for start in 100 105 110 115 120 125; do
   python scripts/verify_m5.py --tag primary \

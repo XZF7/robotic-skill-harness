@@ -6,7 +6,7 @@
   - B1 (RecoveryRunner, 规则恢复): 同故障 -> 应恢复成功 (recovered=True)。
 
 运行:
-    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
     python scripts/smoke_test.py
 
 通过条件: 故障注入核实 (injected=True) 且 B1 恢复成功。

@@ -6,7 +6,7 @@ PickCubeSkill + RecoveryRunner (B1)。在第 10 步把 cube 位移 0.5m，超出
 RecoveryManager 决策 ABORT (RECOVERY_EXHAUSTED)。不把 reset 当作恢复。
 
 运行:
-    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=2
+    source scripts/activate_env.sh && export CUDA_VISIBLE_DEVICES=0
     python scripts/demo_abort.py
 
 退出码 0 表示演示正常结束。

@@ -32,7 +32,7 @@
 ### 环境修复（Agent A 发现，已生效）
 
 1. **numpy 2.2.6 → 1.26.4**：numpy2 使 mplib `ArticulatedModel` 空指针段错误。已降级，mani_skill/mplib/torch 均正常。
-2. **CUDA_VISIBLE_DEVICES 不能设空串**：空串使 SAPIEN `build_cube` 段错误。规避：设为单一有效卡号（如 `2`），但仿真/渲染仍走 CPU（`-b cpu`，`render_backend=none`），不占 GPU 计算。
+2. **CUDA_VISIBLE_DEVICES 不能设空串**：空串使 SAPIEN `build_cube` 段错误。规避：设为单一有效卡号（如 `0`），但仿真/渲染仍走 CPU（`-b cpu`，`render_backend=none`），不占 GPU 计算。
 
 ### M2 集成点（待办，不阻塞 M1）
 
