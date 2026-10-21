@@ -5,7 +5,7 @@
 ## Milestone 0 — 环境与仓库 ✅（已验证）
 
 - OS: Ubuntu 20.04.6 LTS（lthpc）；4× H800 80GB（被其他任务占用）；nvcc 12.1.105。
-- 环境 `/data02/xzf/envs/maniskill`（Python 3.10.22）：torch 2.5.1+cu124、mani_skill 3.0.1、sapien 3.0.3、mplib 0.1.1、pytest。
+- 环境 conda `maniskill`（Python 3.10.22，路径经 `MANISKILL_ENV` 参数化）：torch 2.5.1+cu124、mani_skill 3.0.1、sapien 3.0.3、mplib 0.1.1、pytest。
 - 官方示例 PickCube-v1（CPU headless）跑通，日志 `logs/m0_pickcube_cpu.log`。
 - 详见 git 历史 `de2db2b`。
 
@@ -194,3 +194,28 @@ paired diff（bootstrap）: B1−B0 +0.400 CI[0.30,0.51] 显著；B2−B1 −0.4
 **核心结论（诚实负面结果）**: 学习预判（B2）端到端显著劣于规则恢复（B1），时序门控（B2-T）无法修复。根因：proprioception-only 观测空间无法在抓空发生前区分成功/失败（失败仅闭合后可观测），帧级假阳（12%）放大成 attempt 级中止（每集 ~1.84 次触发），耗尽 max_retries。B1 事后检测+重规划已近最优。不推广为"学习式天生无效"——引入视觉观测可能改变结论（超范围）。
 
 详见 `docs/M5_RESULTS.md`。
+
+
+## Milestone 6 — 技术报告、可复现性、作品集与实习准备 ✅
+
+### M6-0 审计（Lead）
+
+头条指标独立核对原始数据一致（B0 25.6%/B1 65.6%/B2 17.8%/B2-T 20.0%）；275 自动化测试 vs 270 episode 区分；seed 级聚类 bootstrap 确认结论稳健；无凭据/密钥；绝对路径参数化（activate_env.sh 用 MANISKILL_ENV）。
+
+### M6-A 演示与可复现（Agent A）
+
+3 个最小演示脚本（normal/recovery/abort，真实跑通，text trace 不伪造录像）+ `docs/DEMO_GUIDE.md` + `docs/REPRODUCIBILITY.md` + `scripts/smoke_test.py`（~20s，SMOKE PASS）。可恢复场景检测到 motion_fail（技能自报优先）而非 GRIP_FAIL，已如实标注。
+
+### M6-B 架构文档（Agent B）
+
+`docs/ARCHITECTURE.md` 重写：2 Mermaid 图 + 11 组件 + 12 步生命周期 + 接口契约/8 错误码/重试/日志/数据分离 + 3 权衡 + 原创性边界（本项目实现编排/注入/检测/恢复/评估，mplib/ManiSkill/SAPIEN 为第三方）。
+
+### M6-D 技术报告（Agent D）
+
+`docs/TECHNICAL_REPORT.md`（11 章节，~4400 词）：数字全部从原始日志核实，7 机制解释离线-在线鸿沟，科学约束（不夸大、不称普遍无效、不称视觉、不称真机推广）。
+
+### M6-Lead 作品集
+
+README.md（英文专业版，含结果表/架构图/演示/安装/复现/结构/限制/许可）+ LICENSE(MIT) + `docs/RESUME_BULLETS.md`（4 条简历要点）+ `docs/INTERVIEW_QA.md`（10 问 + 2 分钟走查）。
+
+**M6 完成 = 最终里程碑**。发布/推送需用户明确授权（未推送、未创建公开仓库、未发布 release）。
