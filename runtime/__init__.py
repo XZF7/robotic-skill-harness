@@ -22,11 +22,15 @@ from .recovery import (
 )
 from .logger import ExecutionLogger
 from .predictive import (
+    FROZEN_B2T_GATE,
     PredictiveConfig,
     PredictiveGuard,
     PredictiveTrigger,
     PredictionRecord,
     RecoveryMode,
+    TemporalGate,
+    TemporalGateConfig,
+    TemporalGateMode,
     load_predictor_from_checkpoint,
 )
 from .registry import SkillRegistry
@@ -55,6 +59,10 @@ __all__ = [
     "skill_status_to_task_state",
     "ExecutionLogger",
     "RecoveryMode",
+    "TemporalGateMode",
+    "TemporalGateConfig",
+    "TemporalGate",
+    "FROZEN_B2T_GATE",
     "PredictiveGuard",
     "PredictiveTrigger",
     "PredictionRecord",
