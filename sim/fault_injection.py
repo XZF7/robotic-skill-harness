@@ -246,7 +246,7 @@ class FaultInjector:
             finger_after = self._robot_qpos()[7:9].tolist()
             grasped_now = self.is_grasped()
             fell = (start_z is not None) and (end_z < start_z - 0.01)
-            injected = bool(fell or (not grasped_now))
+            injected = bool(fell)
             return FaultRecord(
                 fault_type=FAULT_GRIPPER_DROP,
                 injected=injected,
@@ -258,6 +258,7 @@ class FaultInjector:
                     "finger_before": af.state.get("finger_before"),
                     "finger_after": finger_after,
                     "is_grasped_after": grasped_now,
+                    "never_grasped": not grasped_now and not fell,
                     "fell": fell,
                     "verification": "sustained gripper open; cube fell / grasp released",
                 },
