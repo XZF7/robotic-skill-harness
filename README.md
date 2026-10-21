@@ -4,6 +4,15 @@ A reproducible robot-manipulation framework for **fault detection, bounded recov
 
 > This is a research/engineering portfolio project (simulation only). It is **not** peer-reviewed or published research, and it is **not** a vision-based system: motion planning uses privileged simulator state (see [Known limitations](#known-limitations)).
 
+## At a glance (one-minute summary)
+
+- **Problem** — real manipulation is unreliable: objects get displaced, grasps slip, plans fail. A robust system needs fault *detection*, *bounded recovery*, and *honest evaluation* of "smarter" learned predictors.
+- **Built here (not third-party)** — the skill/execution architecture, physical fault injection, rule-based detection & recovery, the benchmark pipeline, and the learned-predictor analysis. Motion planning (mplib), simulation (ManiSkill), and physics (SAPIEN) are third-party and used as-is.
+- **How it works** — a `RobotSkill` interface (single authoritative `SkillResult`) → `SkillExecutor` → the simulator → a `RecoveryManager` with a hard `max_retries=2` budget (safe abort, never `reset`-as-recovery).
+- **Strongest result** — rule-based recovery lifts task success **25.6% → 65.6%** across 90 matched fault scenarios (paired bootstrap CI [+0.30, +0.51]).
+- **Negative result (honest)** — a proprioception-only MLP (offline PR-AUC 0.877) *dropped* closed-loop success to 17.8%: the failure (grasp-miss) is only observable *after* the gripper closes, so its "early warnings" were false positives that wasted retry budget.
+- **Reproduce** — `source scripts/activate_env.sh && python scripts/smoke_test.py` (~20 s), then `python -m pytest tests/ runtime/ eval/` (270 tests).
+
 ## The problem
 
 Real robot manipulation is unreliable: objects get displaced, grasps slip, plans fail. A robust system must (1) *detect* when an attempt has gone wrong, (2) *recover* with bounded retries instead of infinite loops, and (3) *evaluate* honestly whether a "smarter" learned failure predictor actually helps closed-loop performance — or just looks good on offline metrics.

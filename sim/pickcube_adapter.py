@@ -62,17 +62,19 @@ class PickCubeAdapter(SimulatorAdapter):
         control_mode: str = "pd_joint_pos",
         sim_backend: str = "cpu",
         render_backend: str = "none",
+        render_mode: str = "none",
         max_episode_steps: int = 200,
         obs_mode: str = "none",
     ):
         self._max_episode_steps = max_episode_steps
         self._step_count = 0
-        # render_mode="none" + render_backend="none" -> 完全关闭渲染 (headless)
+        # 默认 render_mode="none" + render_backend="none" -> 完全关闭渲染 (headless)。
+        # 录像时传入 render_mode="rgb_array" + render_backend="gpu"/"sapien_cuda:n"。
         self._env = gym.make(
             env_id,
             obs_mode=obs_mode,
             control_mode=control_mode,
-            render_mode="none",
+            render_mode=render_mode,
             render_backend=render_backend,
             sim_backend=sim_backend,
             max_episode_steps=max_episode_steps,

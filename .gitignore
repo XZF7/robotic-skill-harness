@@ -39,3 +39,13 @@ data/*
 !data/m4/
 data/m4/*
 !data/m4/manifest.json
+
+# 关键实验证据白名单 (技术报告/README 引用, 大小可控, 须随仓库发布)
+!logs/m4_benchmark.json
+!logs/m5_primary.json
+!logs/m5_primary_episodes.csv
+!logs/m5_primary_episodes.json
+!logs/m5_primary_episodes.jsonl
+!logs/m5_primary_figure.png
+!logs/m5_b2t_episodes.jsonl
+!logs/m5_b2t_comparison.json

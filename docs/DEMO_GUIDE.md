@@ -137,32 +137,28 @@ Demo 3 — 不可恢复失败 (object_displacement_large 0.5m)，安全中止
 
 ## 4. 录像说明（不伪造）
 
-- 本环境 **CPU-only headless**（`CUDA_VISIBLE_DEVICES=2` 实际无 GPU 参与，`render_mode="none"`，
-  `render_backend="none"`），**无法渲染视频**。三个演示因此不产出 .mp4。
+- 本机 **CPU-only headless**，4× GPU 均被无关训练任务占用。实测 `render_mode="rgb_array"` 时渲染
+  触发 Vulkan `ErrorDeviceLost`（GPU 满载），且本 SAPIEN 构建的 `render_backend="cpu"` 仍回退 Vulkan，
+  故**本机无法安全渲染视频**，三个演示不产出 .mp4。
 - **可复现的替代记录**：脚本打印的逐步骤 trace（step/gripper/is_grasped/success + 失败类别 + 恢复决策）
-  是确定性的文本记录。固定 `seed=0` 重跑即得到完全相同的输出——**脚本本身就是 replay**。
-- 在**有显示 + GPU**（或至少可用的 SAPIEN/GL 渲染后端）的机器上录制视频的步骤：
+  是确定性的文本记录。固定 `seed=0` 重跑即得完全相同的输出——**脚本本身就是 replay**。
 
-  1. 用渲染后端创建环境并逐帧抓取相机画面（示例片段，**未在本 headless 环境运行**）：
+### 在有健康 GPU 的机器上录制（已据 ManiSkill 3.0.1 源码核实 API，本机未执行）
 
-     ```python
-     import imageio, numpy as np
-     from sim import PickCubeAdapter, PickCubeSkill
-     # 需渲染后端：把 PickCubeAdapter 的 render_backend 换成 "sapien"/"gl"，
-     # render_mode 换成 "rgb_array"（当前默认 "none" 是 headless 专用）。
-     adapter = PickCubeAdapter(render_backend="gl")          # 需自行扩展 adapter 支持 rgb_array
-     obs = adapter.reset(seed=0)
-     skill = PickCubeSkill(adapter); skill.reset(obs)
-     writer = imageio.get_writer("demo_normal.mp4", fps=30)
-     cam = adapter.env.unwrapped  # 取相机后 env.render() 或相机 sensor 抓帧
-     while not skill.is_done:
-         action = skill.act(obs)
-         res = adapter.step(action); obs = res.observation
-         frame = adapter.env.render()  # (H,W,3) RGB，需 render_mode="rgb_array"
-         writer.append_data(frame)
-     writer.close()
-     ```
+```bash
+source scripts/activate_env.sh
+export CUDA_VISIBLE_DEVICES=<空闲 GPU id>   # 不能用已满的卡
+python scripts/record_demos.py --scenario normal     # -> videos/demo_normal.mp4
+python scripts/record_demos.py --scenario recovery   # -> videos/demo_recovery.mp4
+python scripts/record_demos.py --scenario abort      # -> videos/demo_abort.mp4
+python scripts/record_demos.py --all                 # 三个都录
+```
 
-  2. 说明：当前 `sim/pickcube_adapter.py` 的 `render_mode` 硬编码为 `"none"`（headless 设计，
-     非本 Agent 可改文件），录制前需在 GPU/显示环境把 adapter 扩展到 rgb 渲染。
-  3. 本仓库**不提交任何伪造的演示录像**；所有演示结果均以真实控制台输出为准。
+要点（已核实，非猜测）：
+- `PickCubeAdapter` 现已参数化 `render_mode`（默认 `"none"` headless）；录像时传
+  `render_mode="rgb_array"` + `render_backend="gpu"`（或 `"sapien_cuda:n"` 指定卡）。
+- 帧抓取用 `env.unwrapped.render_rgb_array()`（返回 `(num_envs,H,W,3)`），合成视频用
+  `mani_skill.utils.visualization.misc.images_to_video(images, output_dir, video_name, fps=10)`。
+- `scripts/record_demos.py` 复用三个演示的**相同机器人行为**（同一 skill/故障参数/恢复策略），
+  仅附加逐帧抓取，不改变控制逻辑。
+- 本仓库**不提交任何伪造录像**；`videos/` 已在 .gitignore 中，录制产物不入库。
