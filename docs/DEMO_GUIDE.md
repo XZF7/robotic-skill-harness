@@ -152,6 +152,7 @@ python scripts/record_demos.py --scenario normal     # -> videos/demo_normal.mp4
 python scripts/record_demos.py --scenario recovery   # -> videos/demo_recovery.mp4
 python scripts/record_demos.py --scenario abort      # -> videos/demo_abort.mp4
 python scripts/record_demos.py --all                 # 三个都录
+python scripts/record_demos.py --all --headless      # 无 GPU 干跑，只验证场景逻辑
 ```
 
 要点（已核实，非猜测）：
