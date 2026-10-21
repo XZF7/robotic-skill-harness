@@ -62,7 +62,7 @@ Full guide (including how to record video on a GPU/display machine): [`docs/DEMO
 Requirements: Linux, Python 3.10, CPU-only is fine. The code depends on [ManiSkill3](https://maniskill.readthedocs.io/), SAPIEN, mplib, PyTorch, NumPy, gymnasium.
 
 ```bash
-git clone <this-repo> && cd <this-repo>
+git clone https://github.com/XZF7/robotic-skill-harness && cd robotic-skill-harness
 # create/activate your ManiSkill conda env, then point the helper at it:
 export MANISKILL_ENV=/path/to/your/maniskill-env
 source scripts/activate_env.sh   # sets PATH + fixes the nvjitlink LD_LIBRARY_PATH issue
