@@ -47,13 +47,13 @@ Complete Mermaid diagrams and component specs (interfaces, contracts, error code
 
 ## Demonstrations
 
-Three runnable demos (CPU-only, deterministic, text traces — no fabricated video):
+Three runnable demos with recorded videos (real ManiSkill renderings, recorded on an H800 GPU — see the [v0.6.3 release](https://github.com/XZF7/robotic-skill-harness/releases/tag/v0.6.3)):
 
-| Demo | Command | Shows |
-|---|---|---|
-| Normal grasp | `python scripts/demo_normal.py` | successful PickCube execution |
-| Recoverable failure | `python scripts/demo_recovery.py` | fail → detect → retry → same-episode re-plan → success |
-| Unrecoverable failure | `python scripts/demo_abort.py` | plan failure → bounded retries → safe abort |
+| Demo | Video | Command | Shows |
+|---|---|---|---|
+| Normal grasp | [▶ Watch](https://github.com/XZF7/robotic-skill-harness/releases/download/v0.6.3/demo_normal.mp4) | `python scripts/demo_normal.py` | successful PickCube execution |
+| Recoverable failure | [▶ Watch](https://github.com/XZF7/robotic-skill-harness/releases/download/v0.6.3/demo_recovery.mp4) | `python scripts/demo_recovery.py` | fail → detect → retry → same-episode re-plan → success |
+| Unrecoverable failure | [▶ Watch](https://github.com/XZF7/robotic-skill-harness/releases/download/v0.6.3/demo_abort.mp4) | `python scripts/demo_abort.py` | plan failure → bounded retries → safe abort |
 
 Full guide (including how to record video on a GPU/display machine): [`docs/DEMO_GUIDE.md`](docs/DEMO_GUIDE.md).
 
