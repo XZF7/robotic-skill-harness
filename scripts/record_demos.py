@@ -81,7 +81,9 @@ class RecordingAdapter(SimulatorAdapter):
         try:
             img = self._inner.env.unwrapped.render_rgb_array()
             if img is not None:
-                if getattr(img, "ndim", None) == 4:  # (num_envs,H,W,3) -> (H,W,3)
+                if hasattr(img, "cpu"):  # torch.Tensor -> numpy (CPU)
+                    img = img.cpu().numpy()
+                if img.ndim == 4:  # (num_envs,H,W,3) -> (H,W,3)
                     img = img[0]
                 self.frames.append(img)
         except Exception as exc:  # 渲染失败不阻断执行, 如实告警
@@ -168,7 +170,7 @@ def run_fault(name, delta, headless):
 
 def save(frames, name):
     os.makedirs("videos", exist_ok=True)
-    images_to_video(frames, output_dir="videos", video_name=f"demo_{name}.mp4", fps=10)
+    images_to_video(frames, output_dir="videos", video_name=f"demo_{name}", fps=10)
     print(f"[record] saved videos/demo_{name}.mp4 ({len(frames)} frames)")
 
 
